@@ -1,0 +1,226 @@
+:root {
+    font-family: 'helvetica neue', 'Arial', sans-serif;
+
+    --black0: #000;
+    --black1: #121212;
+    --white0: #fff;
+    --white1: #fcfcfc;
+
+    --ibm-green-20: #a7f0ba;
+    --ibm-green-40: #42be65;
+    --ibm-green-50: #24a148;
+    --ibm-green-60: #198030;
+    --ibm-green-70: #0e6027;
+    --ibm-green-90: #022d0d;
+
+    --ibm-blue-20: #d0e2ff;
+    --ibm-blue-40: #78a9ff;
+    --ibm-blue-50: #4589ff;
+    --ibm-blue-60: #0f62fe;
+    --ibm-blue-70: #0043ce;
+    --ibm-blue-90: #001d6c;
+
+    --ibm-purple-20: #e8daff;
+    --ibm-purple-40: #be95ff;
+    --ibm-purple-50: #a56eff;
+    --ibm-purple-60: #8a3ffc;
+    --ibm-purple-70: #6929c4;
+    --ibm-purple-90: #31135e;
+
+    --gap: 0.75rem;
+
+    --button-height1: 2.75rem;
+    --button-height0: calc(var(--button-height1) + 2 * var(--gap));
+    
+    --button-width2: 7.5rem;
+    --button-width1: calc(2 * var(--button-width2) + var(--gap));
+    --button-width0: calc(var(--button-width1) + 2 * var(--gap));
+    
+    --border-radius1: 0.75rem;
+    --border-radius0: calc(var(--border-radius1) + var(--gap));
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --background-color: var(--white1);
+        --text-color0: var(--black0);
+        --button-color: var(--white0);
+
+        --green0: var(--ibm-green-60);
+        --green1: var(--ibm-green-70);
+        --green2: var(--ibm-green-90);
+        --blue0: var(--ibm-blue-60);
+        --blue1: var(--ibm-blue-70);
+        --blue2: var(--ibm-blue-90);
+        --purple0: var(--ibm-purple-60);
+        --purple1: var(--ibm-purple-70);
+        --purple2: var(--ibm-purple-90);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: var(--black1);
+        --text-color0: var(--white0);
+        --button-color: var(--black0);
+
+        --green0: var(--ibm-green-50);
+        --green1: var(--ibm-green-40);
+        --green2: var(--ibm-green-20);
+        --blue0: var(--ibm-blue-50);
+        --blue1: var(--ibm-blue-40);
+        --blue2: var(--ibm-blue-20);
+        --purple0: var(--ibm-purple-50);
+        --purple1: var(--ibm-purple-40);
+        --purple2: var(--ibm-purple-20);
+    }
+}
+
+html {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    align-items: center;
+    align-self: center;
+    background-color: var(--background-color);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--gap);
+    justify-content: center;
+    margin: auto;
+}
+
+h1, h2, p, section, div, a {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, p {
+    color: var(--text-color0);
+}
+
+h1 {
+    font-size: 2.75rem;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 400;
+    letter-spacing: -0.3px;
+}
+
+@keyframes breathe {
+    0% {opacity: 0;}
+    40% {opacity: 100%;}
+    60% {opacity: 100%;}
+    100% {opacity: 0;}
+}
+
+p {
+    animation: breathe 1.5s ease-in-out infinite;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+section {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+section.headings {
+    gap: calc(0.5*var(--gap));
+}
+
+section.btns {
+    gap: var(--gap);
+}
+
+div {
+    align-items: center;
+    border-radius: var(--border-radius0);
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--gap);
+    height: var(--button-height0);
+    justify-content: center;
+    width: var(--button-width0);
+}
+
+div.alpha {
+    background-color: var(--green2);
+}
+
+div.beta {
+    background-color: var(--blue2);
+}
+
+div.case-study {
+    background-color: var(--purple2);
+}
+
+a {
+    align-items: center;
+    border-radius: var(--border-radius1);
+    color: var(--button-color);
+    cursor: pointer;
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 500;
+    flex-flow: row nowrap;
+    height: var(--button-height1);
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 80ms;
+    transition-property: background-color color;
+    transition-timing-function: ease-in-out;
+    width: var(--button-width2);
+}
+
+a.alpha {
+    background-color: var(--green0);
+}
+
+a.alpha:hover {
+    background-color: var(--green1);
+}
+
+a.alpha:active {
+    background-color: var(--button-color);
+    color: var(--green1);
+}
+
+a.beta {
+    background-color: var(--blue0);
+}
+
+a.beta:hover {
+    background-color: var(--blue1);
+}
+
+a.beta:active {
+    background-color: var(--button-color);
+    color: var(--blue1);
+}
+
+a.case-study {
+    background-color: var(--purple0);
+    width: var(--button-width1);
+}
+
+a.case-study:hover {
+    background-color: var(--purple1);
+}
+
+a.case-study:active {
+    background-color: var(--button-color);
+    color: var(--purple1);
+}
