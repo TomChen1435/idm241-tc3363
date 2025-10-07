@@ -1,0 +1,75 @@
+h1.header {
+    --local-selected-color: var(--green0);
+
+    background-color: var(--local-selected-color);
+    color: var(--button-text-color);
+
+    animation: breathe1 2.5s ease-in-out 3;
+}
+
+@media (width <= 50rem) {
+    span.course-code {display: none;}
+}
+
+@media (width <= 38rem) {
+    div.title > img.icon {display: none;}
+}
+
+main {
+    justify-self: center;
+    gap: var(--gap-2x);
+    padding: var(--gap-2x);
+}
+
+/* Image Display */
+
+section.temp-imgs {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--gap);
+}
+
+img.temp {
+    width: auto;
+}
+
+/* Button to the original site */
+
+a.btn.flying-blue {
+    background-color: var(--fb-indigo-background);
+    color: var(--fb-white-text);
+    width: auto;
+}
+
+a.btn.flying-blue:hover {
+    background-color: var(--fb-gray-background);
+    border: 0.25rem solid var(--fb-indigo-background);
+    color: var(--fb-indigo-text);
+}
+
+a.btn.flying-blue:active {
+    background-color: var(--fb-white-text);
+}
+
+/* Section Titles */
+
+section.triggers > h2 {color: var(--green0);}
+section.feedbacks > h2, section.rules > h2 {color: var(--blue0);}
+section.loops > h2, section.modes > h2 {color: var(--purple0);}
+
+ul {
+    margin: var(--gap);
+    padding-left: var(--gap);
+}
+
+h3 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    padding-bottom: var(--gap-x8);
+}
+
+li {
+    font-size: 1.125rem;
+    padding: var(--gap-x8) 0;
+    margin-left: var(--gap);
+}
