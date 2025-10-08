@@ -21,16 +21,12 @@ main {
     padding: var(--gap-2x);
 }
 
-/* Image Display */
+/* GIF Display */
 
-section.temp-imgs {
-    display: flex;
-    flex-flow: column nowrap;
-    gap: var(--gap);
-}
-
-img.temp {
-    width: auto;
+img.visualize {
+    border-radius: var(--border-radius);
+    justify-self: center;
+    width: var(--component-width);
 }
 
 /* Button to the original site */
@@ -38,7 +34,7 @@ img.temp {
 a.btn.flying-blue {
     background-color: var(--fb-indigo-background);
     color: var(--fb-white-text);
-    width: auto;
+    width: var(--component-width);
 }
 
 a.btn.flying-blue:hover {
@@ -53,11 +49,22 @@ a.btn.flying-blue:active {
 
 /* Section Titles */
 
-section.triggers > h2 {color: var(--green0);}
-section.feedbacks > h2, section.rules > h2 {color: var(--blue0);}
-section.loops > h2, section.modes > h2 {color: var(--purple0);}
+section.content {
+    background-color: var(--background-alt);
+    border-radius: var(--border-radius);
+    padding: var(--gap);
+    padding-bottom: var(--gap-x8);
+    width: var(--component-width);
+}
+
+section.triggers {background-color: var(--green0);}
+section.rules, section.feedbacks {background-color: var(--blue0);}
+section.loops-modes {background-color: var(--purple0);}
+
+h2 {color: var(--text-color0);}
 
 ul {
+    color: var(--text-color1);
     margin: var(--gap);
     padding-left: var(--gap);
 }
