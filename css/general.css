@@ -8,9 +8,8 @@
     --gap-x8: calc(0.125 * var(--gap));
     --gap-2x: calc(2 * var(--gapX));
 
-    --button-heightX: 2.75rem;
-    --button-height: calc(var(--zoom-factor) * var(--button-heightX));
-    --wrapper-height: calc(var(--button-height) + 2 * var(--gap));
+    --btn-heightX: 2.75rem;
+    --btn-height: calc(var(--zoom-factor) * var(--btn-heightX));
     
     --border-radiusX: 0.75rem;
     --border-radius: calc(var(--zoom-factor) * var(--border-radiusX));
@@ -36,6 +35,13 @@
     --ibm-green-70: #0e6027;
     --ibm-green-90: #022d0d;
 
+    --ibm-teal-20: #9ef0f0;
+    --ibm-teal-40: #08bdba;
+    --ibm-teal-50: #009d9a;
+    --ibm-teal-60: #007d79;
+    --ibm-teal-70: #005d5d;
+    --ibm-teal-90: #022b30;
+
     --ibm-blue-20: #d0e2ff;
     --ibm-blue-40: #78a9ff;
     --ibm-blue-50: #4589ff;
@@ -49,6 +55,13 @@
     --ibm-purple-60: #8a3ffc;
     --ibm-purple-70: #6929c4;
     --ibm-purple-90: #31135e;
+
+    --ibm-magenta-20: #ffd6e8;
+    --ibm-magenta-40: #ff7eb6;
+    --ibm-magenta-50: #ee5396;
+    --ibm-magenta-60: #d02670;
+    --ibm-magenta-70: #9f1853;
+    --ibm-magenta-90: #510224;
 }
 
 @media (prefers-color-scheme: light) {
@@ -56,18 +69,29 @@
         --background-color: var(--white1);
         --background-alt: var(--black1);
         --text-color0: var(--black0);
+        --text-color0-alt: var(--white0);
         --text-color1: var(--black1);
-        --button-text-color: var(--white0);
+        --text-color1-alt: var(--white1);
 
         --green0: var(--ibm-green-60);
         --green1: var(--ibm-green-70);
         --green2: var(--ibm-green-90);
+
+        --teal0: var(--ibm-teal-60);
+        --teal1: var(--ibm-teal-70);
+        --teal2: var(--ibm-teal-90);
+
         --blue0: var(--ibm-blue-60);
         --blue1: var(--ibm-blue-70);
         --blue2: var(--ibm-blue-90);
+
         --purple0: var(--ibm-purple-60);
         --purple1: var(--ibm-purple-70);
         --purple2: var(--ibm-purple-90);
+
+        --magenta0: var(--ibm-magenta-60);
+        --magenta1: var(--ibm-magenta-70);
+        --magenta2: var(--ibm-magenta-90);
     }
 }
 
@@ -76,18 +100,29 @@
         --background-color: var(--black1);
         --background-alt: var(--white1);
         --text-color0: var(--white0);
+        --text-color0-alt: var(--black0);
         --text-color1: var(--white1);
-        --button-text-color: var(--black0);
+        --text-color1-alt: var(--black1);
 
         --green0: var(--ibm-green-50);
         --green1: var(--ibm-green-40);
         --green2: var(--ibm-green-20);
+
+        --teal0: var(--ibm-teal-50);
+        --teal1: var(--ibm-teal-40);
+        --teal2: var(--ibm-teal-20);
+
         --blue0: var(--ibm-blue-50);
         --blue1: var(--ibm-blue-40);
         --blue2: var(--ibm-blue-20);
+
         --purple0: var(--ibm-purple-50);
         --purple1: var(--ibm-purple-40);
         --purple2: var(--ibm-purple-20);
+
+        --magenta0: var(--ibm-magenta-50);
+        --magenta1: var(--ibm-magenta-40);
+        --magenta2: var(--ibm-magenta-20);
     }
 }
 
@@ -125,23 +160,15 @@ a.hyperlink {
     text-decoration: underline;
 }
 
-a.hyperlink:hover {
-    color: var(--apple-indigo);
-}
-
-a.hyperlink:active {
-    color: var(--apple-pink);
-}
-
-a.hyperlink:visited {
-    color: var(--apple-purple);
-}
+a.hyperlink:hover {color: var(--apple-indigo);}
+a.hyperlink:active {color: var(--apple-pink);}
+a.hyperlink:visited {color: var(--apple-purple);}
 
 /* Button */
 
 a.btn {
     align-items: center;
-    color: var(--button-text-color);
+    color: var(--text-color0-alt);
     display: flex;
     font-size: 1.5rem;
     font-weight: 500;
@@ -159,25 +186,27 @@ a.btn {
 @keyframes breathe1 {
     0% {
         background-color: var(--local-selected-color);
-        color: var(--button-text-color);
+        color: var(--text-color0-alt);
     }
     50% {
-        background-color: var(--button-text-color);
+        background-color: var(--text-color0-alt);
         color: var(--local-selected-color);
     }
     100% {
         background-color: var(--local-selected-color);
-        color: var(--button-text-color);
+        color: var(--text-color0-alt);
     }
 }
 
-@keyframes breathe3 {
+@keyframes breathe4 {
     0% {color: var(--text-color0);}
-    16.67% {color: var(--green1);}
-    33.33% {color: var(--text-color0);}
-    50% {color: var(--blue1);}
-    66.67% {color: var(--text-color0);}
-    83.33% {color: var(--purple1);}
+    12.5% {color: var(--green1);}
+    25% {color: var(--text-color0);}
+    37.5% {color: var(--teal1)}
+    50% {color: var(--text-color0);}
+    62.5% {color: var(--blue1);}
+    75% {color: var(--text-color0);}
+    87.5% {color: var(--purple1);}
     100% {color: var(--text-color0);}
 }
 
@@ -197,7 +226,7 @@ a, button {cursor: pointer;}
 
 a.btn, button, img.icon {
     border-radius: var(--border-radius);
-    height: var(--button-height);
+    height: var(--btn-height);
 }
 
 body {background-color: var(--background-color);}
@@ -239,10 +268,10 @@ div.title {
     margin-left: var(--gap-2x);
 }
 
-img.icon {width: var(--button-height);}
+img.icon {width: var(--btn-height);}
 
 div.title > a, h1.header {
-    color: var(--button-text-color);
+    color: var(--text-color0-alt);
     font-size: 2.75rem;
     text-decoration: none;
 }
@@ -287,4 +316,14 @@ h1.header {
     :root {
         --component-width: calc(100vw - 2 * var(--gap-2x));
     }
+}
+
+.wrapper {
+    align-items: center;
+    border-radius: var(--border-radius-wrapper);
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--gap);
+    justify-content: center;
+    padding: var(--gap);
 }

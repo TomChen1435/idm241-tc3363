@@ -10,7 +10,7 @@ h1, h2, p {
 }
 
 p.prompt {
-    animation: breathe3 7.5s ease-in-out infinite;
+    animation: breathe4 10s ease-in-out infinite;
     font-weight: 300;
     letter-spacing: 0.5px;
 }
@@ -18,30 +18,19 @@ p.prompt {
 /* Buttons */
 
 :root {
-    --button-widthX: 7.5rem;
-    --button-width-1x: calc(var(--zoom-factor) * var(--button-widthX));
-    --button-width-2x: calc(2 * var(--button-width-1x) + var(--gap));
-    --wrapper-width: calc(var(--button-width-2x) + 2 * var(--gap));
-}
-
-div {
-    align-items: center;
-    border-radius: var(--border-radius-wrapper);
-    display: flex;
-    flex-flow: row nowrap;
-    gap: var(--gap);
-    height: var(--wrapper-height);
-    justify-content: center;
-    width: var(--wrapper-width);
+    --btn-widthX: 7.5rem;
+    --btn-width-1x: calc(var(--zoom-factor) * var(--btn-widthX));
+    --btn-width-2x: calc(2 * var(--btn-width-1x) + var(--gap));
 }
 
 div.alpha {background-color: var(--green2);}
-div.beta {background-color: var(--blue2);}
+div.beta {background-color: var(--teal2);}
+div.final {background-color: var(--blue2);}
 div.case-study {background-color: var(--purple2);}
 
-a.btn {width: var(--button-width-1x);}
+a.btn {width: var(--btn-width-1x);}
 
-a.case-study {width: var(--button-width-2x);}
+a.case-study {width: var(--btn-width-2x);}
 
 /* Microinteraction for buttons */
 
@@ -49,16 +38,19 @@ a.alpha {background-color: var(--green0);}
 a.alpha:hover {background-color: var(--green1);}
 a.alpha:active {color: var(--green1);}
 
-a.beta {background-color: var(--blue0);}
-a.beta:hover {background-color: var(--blue1);}
-a.beta:active {color: var(--blue1);}
+a.beta {background-color: var(--teal0);}
+a.beta:hover {background-color: var(--teal1);}
+a.beta:active {color: var(--teal1);}
+
+a.final {background-color: var(--blue0);}
+a.final:hover {background-color: var(--blue1);}
+a.final:active {color: var(--blue1);}
 
 a.case-study {background-color: var(--purple0);}
 a.case-study:hover {background-color: var(--purple1);}
 a.case-study:active {color: var(--purple1);}
 
-a.btn:active {background-color: var(--button-text-color);}
-
+a.btn:active {background-color: var(--text-color0-alt);}
 
 /* Standard Screen */
 
