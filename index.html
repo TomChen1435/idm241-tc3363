@@ -4,35 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDM 241: Microinteractions</title>
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/general.css">
-    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <main>
-        <section class="headings">
-            <h1>IDM 241: Microinteractions</h1>
-            <h2>Tom Chen, Section 001, Fall 2025</h2>
-        </section>
+<body class="home flexbox">
+    <h1>IDM 241: Microinteractions</h1>
+    <h2>Tom Chen, Section 001, Fall 2025</h2>
+    <p class="prompt">Click the buttons to visit the version you would like to see.</p>
+        
+    <div class="alpha wrapper first">
+        <a href="./alpha/index.html" class="btn interactive first">Alpha</a>
+        <a href="./alpha/build/index.html" class="btn interactive first">Build</a>
+    </div>
 
-        <section class="btns">
-            <p class="prompt">Click the buttons to visit the version you would like to see.</p>
-            <div class="alpha wrapper">
-                <a href="./alpha/index.html" class="btn alpha">Alpha</a>
-                <a href="./alpha/build/index.html" class="btn alpha build">Build</a>
-            </div>
-            <div class="beta wrapper">
-                <a href="./beta/index.html" class="btn beta">Beta</a>
-                <a href="./beta/build/index.html" class="btn beta build">Build</a>
-            </div>
-            <div class="final wrapper">
-                <a href="./final/index.html" class="btn final">Final</a>
-                <a href="./final/build/index.html" class="btn final build">Build</a>
-            </div>
-            <div class="case-study wrapper">
-                <a href="./case_study/index.html" class="btn case-study">Case Study</a>
-            </div>
-        </section>
-    </main>
+    <div class="beta wrapper second">
+        <a href="./beta/index.html" class="btn interactive second">Beta</a>
+        <a href="./beta/build/index.html" class="btn interactive second">Build</a>
+    </div>
+
+    <div class="final wrapper third">
+        <a href="./final/index.html" class="btn interactive third">Final</a>
+        <a href="./final/build/index.html" class="btn interactive third">Build</a>
+    </div>
+
+    <div class="case-study wrapper fourth">
+        <a href="./case_study/index.html" class="btn interactive fourth">Case Study</a>
+    </div>    
 </body>
 </html>
