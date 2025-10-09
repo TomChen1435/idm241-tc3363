@@ -1,3 +1,5 @@
+@import url('./reset.css');
+
 /* Variables */
 
 :root {
@@ -13,21 +15,12 @@
     
     --border-radiusX: 0.75rem;
     --border-radius: calc(var(--zoom-factor) * var(--border-radiusX));
-    --border-radius-wrapper: calc(var(--border-radius) + var(--gap));
-
-    --component-width: 20rem;
+    --border-radius-wrapper: ;
 }
 
-/* Color Schemes */
+/* IBM Design Language - Colors */
 
 :root {
-    font-family: 'Helvetica Neue', 'Arial', sans-serif;
-
-    --black0: #000;
-    --black1: #121212;
-    --white0: #fff;
-    --white1: #fcfcfc;
-
     --ibm-green-20: #a7f0ba;
     --ibm-green-40: #42be65;
     --ibm-green-50: #24a148;
@@ -62,6 +55,25 @@
     --ibm-magenta-60: #d02670;
     --ibm-magenta-70: #9f1853;
     --ibm-magenta-90: #510224;
+}
+
+/* Flying Blue brand colors */
+
+:root {
+    --fb-indigo-text: #0800b9;
+    --fb-gray-background: #f0f6ff;
+    --fb-black-text: #1d1d1d;
+    --fb-indigo-background: #09179d;
+    --fb-white-text: #fff;
+}
+
+/* Color schemes */
+
+:root {
+    --black0: #000;
+    --black1: #121212;
+    --white0: #fff;
+    --white1: #fcfcfc;
 }
 
 @media (prefers-color-scheme: light) {
@@ -126,14 +138,6 @@
     }
 }
 
-:root {
-    --fb-indigo-text: #0800b9;
-    --fb-gray-background: #f0f6ff;
-    --fb-black-text: #1d1d1d;
-    --fb-indigo-background: #09179d;
-    --fb-white-text: #fff;
-}
-
 /* Hyperlinks */
 
 @media (prefers-color-scheme: light) {
@@ -156,7 +160,6 @@
 
 a.hyperlink {
     color: var(--apple-blue);
-    cursor: pointer;
     text-decoration: underline;
 }
 
@@ -164,24 +167,15 @@ a.hyperlink:hover {color: var(--apple-indigo);}
 a.hyperlink:active {color: var(--apple-pink);}
 a.hyperlink:visited {color: var(--apple-purple);}
 
-/* Button */
+/* Component background colors */
 
-a.btn {
-    align-items: center;
-    color: var(--text-color0-alt);
-    display: flex;
-    font-size: 1.5rem;
-    font-weight: 500;
-    flex-flow: row nowrap;
-    justify-content: center;
-    text-align: center;
-    text-decoration: none;
-    transition-duration: 80ms;
-    transition-property: background-color color;
-    transition-timing-function: ease-in-out;
-}
+.wrapper.first {background-color: var(--green2);}
+.wrapper.second {background-color: var(--teal2);}
+.wrapper.third {background-color: var(--blue2);}
+.wrapper.fourth {background-color: var(--purple2);}
+.wrapper.fifth {background-color: var(--magenta2);}
 
-/* Animation Methods */
+/* Animation methods */
 
 @keyframes breathe1 {
     0% {
@@ -210,6 +204,38 @@ a.btn {
     100% {color: var(--text-color0);}
 }
 
+@keyframes breathe4a {
+    0% {background-color: var(--background-alt);}
+    12.5% {background-color: var(--green2);}
+    25% {background-color: var(--background-alt);}
+    37.5% {background-color: var(--teal2)}
+    50% {background-color: var(--background-alt);}
+    62.5% {background-color: var(--blue2);}
+    75% {background-color: var(--background-alt);}
+    87.5% {background-color: var(--purple2);}
+    100% {background-color: var(--background-alt);}
+}
+
+/* Microinteraction for components */
+
+.interactive:active {background-color: var(--text-color0-alt) !important;}
+
+.interactive.first {background-color: var(--green0);}
+.interactive.first:hover {background-color: var(--green1);}
+.interactive.first:active {color: var(--green1);}
+
+.interactive.second {background-color: var(--teal0);}
+.interactive.second:hover {background-color: var(--teal1);}
+.interactive.second:active {color: var(--teal1);}
+
+.interactive.third {background-color: var(--blue0);}
+.interactive.third:hover {background-color: var(--blue1);}
+.interactive.third:active {color: var(--blue1);}
+
+.interactive.fourth {background-color: var(--purple0);}
+.interactive.fourth:hover {background-color: var(--purple1);}
+.interactive.fourth:active {color: var(--purple1);}
+
 /* Basic Designs */
 
 * {
@@ -217,99 +243,234 @@ a.btn {
     text-wrap: pretty;
 }
 
-html, body, header, main, h1, h2, h3, p, section, div, a {
-    margin: 0;
-    padding: 0;
+:root {font-family: 'Helvetica Neue', 'Arial', sans-serif;}
+
+a {cursor: pointer;}
+
+body {background-color: var(--background-color);}
+
+.flexbox, .wrapper, a.btn, section {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--gap);
+    justify-content: center;
+    padding: var(--gap);
 }
 
-a, button {cursor: pointer;}
+.wrapper {
+    border-radius: calc(var(--border-radius) + var(--gap));
+}
 
-a.btn, button, img.icon {
+a.btn, img.icon {
     border-radius: var(--border-radius);
     height: var(--btn-height);
 }
 
-body {background-color: var(--background-color);}
-
-main {
-    align-items: center;
-    display: flex;
-    flex-flow: column nowrap;
-    gap: var(--gap);
-    justify-content: center;
-}
-
-h1, div.title > a {
+a.btn {
+    color: var(--text-color0-alt);
+    font-size: 1.5rem;
     font-weight: 500;
-    letter-spacing: -0.5px;
+    flex-direction: row;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color,color 80ms ease-in-out;
 }
 
-h2 {
+/* Typography */
+
+h1, h2, h3, header > div.title > a {
+    font-weight: 500;
+    letter-spacing: -0.3px;
+}
+
+h2, h3, ul {color: var(--text-color0-alt);}
+
+ul {
+    list-style: disc;
+    padding-left: var(--gap);
+}
+
+li {
+    padding: var(--gap-x8);
+    margin-left: calc(0.5 * var(--gap));
+}
+
+/* Homepage */
+
+body.home {
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Headings of homepage */
+
+body.home > * {text-align: center;}
+
+body.home :where(h1, h2, p.prompt) {color: var(--text-color0);}
+
+body.home > h2 {
     font-weight: 400;
     letter-spacing: -0.3px;
 }
 
+p.prompt {
+    animation: breathe4 10s ease-in-out infinite;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+body.home > .wrapper {flex-direction: row;}
+
+/* Sizes of buttons on the homepage*/
+
+body.home {
+    --btn-widthX: 7.5rem;
+    --btn-width-1x: calc(var(--zoom-factor) * var(--btn-widthX));
+    --btn-width-2x: calc(2 * var(--btn-width-1x) + var(--gap));
+}
+body.home a.btn {width: var(--btn-width-1x);}
+body.home > div.case-study > a.btn {width: var(--btn-width-2x);}
+
 /* Header */
 
 header {
-    align-items: center;
     background-color: var(--background-alt);
-    display: flex;
-    flex-flow: row nowrap;
+    flex-direction: row;
+    height: calc(var(--btn-height) + 2 * var(--gap));
+}
+/* Maximal speciality to override flexbox rules */
+header.flexbox {
     justify-content: space-between;
+    padding: 0;
 }
 
-div.title {
-    align-items: center;
-    display: flex;
-    flex-flow: row nowrap;
-    gap: var(--gap);
-    justify-content: center;
-    margin-left: var(--gap-2x);
+header > * {height: 100%;}
+
+header > div.title {
+    flex-direction: row;
+    padding-left: var(--gap-2x);
 }
 
-img.icon {width: var(--btn-height);}
-
-div.title > a, h1.header {
+header > div.title > a {
     color: var(--text-color0-alt);
-    font-size: 2.75rem;
     text-decoration: none;
 }
 
-h1.header {
-    align-items: center;
-    display: flex;
-    flex-flow: row nowrap;
-    height: 100%;
-    justify-content: center;
-    padding: var(--gap) var(--gap-2x);
+h1.version.first {--local-selected-color: var(--green0);}
+h1.version.second {--local-selected-color: var(--teal0);}
+h1.version.third {--local-selected-color: var(--blue0);}
+h1.version.fourth {--local-selected-color: var(--purple0);}
+
+h1.version {
+    animation: breathe1 2.5s ease-in-out 2;
+    background-color: var(--local-selected-color);
+    color: var(--text-color0-alt);
+    flex-direction: row;
     font-weight: 400;
+    padding: var(--gap) var(--gap-2x);
 }
 
-@media (30rem < width <= 35rem) {
-    div.title > a, h1.header {font-size: 2.25rem;}
+/* Main */
+
+main {
+    flex-direction: column;
+    justify-self: center;
+    padding: var(--gap-2x);
 }
 
-@media (27rem < width <= 30rem) {
-    div.title > a, h1.header {font-size: 2rem;}
+main > div.wrapper, main > div.wrapper > * {
+    flex-direction: column;
+    width: 100%;
+}
+
+div.wrapper > section.headings {
+    align-items: baseline;
+    flex-flow: row wrap;
+    gap: calc(0.75 * var(--gap));
+    justify-content: space-between;
+    padding: var(--gap-x8) var(--gap);
+}
+
+main :where(section.content, img.screen-recording) {border-radius: var(--border-radius);}
+
+section.content {
+    align-items: flex-start;
+    background-color: var(--background-alt);
+    flex-direction: column;
+}
+
+/* Button to the original site */
+
+div.flying-blue, div.visualize {
+    animation: breathe4a 10s ease-in-out infinite;
+    background-color: var(--background-alt);
+}
+
+a.btn.flying-blue {
+    background-color: var(--fb-indigo-background);
+    color: var(--fb-white-text);
+}
+
+a.btn.flying-blue:hover {
+    background-color: var(--fb-gray-background);
+    color: var(--fb-indigo-text);
+}
+
+a.btn.flying-blue:active {
+    background-color: var(--fb-white-text);
+}
+
+/* Responsiveness */
+
+/* Standard Screen */
+
+h1, header > div.title > a {font-size: 2.75rem;}
+h2 {font-size: 1.75rem;}
+h2.component, h3 {font-size: 1.5rem;}
+p, li {font-size: 1.25rem;}
+
+main > div.wrapper {max-width: 30rem;}
+
+/* Smaller Screens */
+
+@media (width <= 50rem) {
+    header > div.title > a > span {display: none;}
+}
+
+@media (23.5rem < width <= 38rem) {
+    div.title > img.icon {display: none;}
+}
+
+@media (30rem < width <= 36.25rem) {
+    h1, header > div.title > a {font-size: 2.25rem;}
+    h2 {font-size: 1.375rem;}
+    h2.component, h3 {font-size: 1.25rem;}
+}
+
+@media (width <= 30rem) {
+    body.home :where(h1, h2, p.prompt) {width: 100%;}
+    h1, header > div.title > a {font-size: 2.125rem;}
 }
 
 @media (width <= 27rem) {
-    div.title > a, h1.header {font-size: 1.75rem;}
+    header > div.title > a, header > h1 {font-size: 1.75rem;}
 }
 
 @media (width <= 23.5rem) {
-    header {flex-direction: column;}
+    header {
+        flex-direction: column;
+        height: auto;
+    }
+    /* Maximal speciality to override flexbox rules */
+    header.flexbox {gap: 0;}
 
-    div.title {
+    header > div.title {
+        margin: 0;
         padding: var(--gap);
-        margin-left: 0;
     }
-
-    h1.header {
-        padding: var(--gap) 0;
-        width: 100vw;
-    }
+    header > h1 {width: 100vw;}
 }
 
 @media (width <= 23rem) {
@@ -318,12 +479,33 @@ h1.header {
     }
 }
 
-.wrapper {
-    align-items: center;
-    border-radius: var(--border-radius-wrapper);
-    display: flex;
-    flex-flow: row nowrap;
-    gap: var(--gap);
-    justify-content: center;
-    padding: var(--gap);
+/* Larger Screens */
+
+@media (80rem <= width < 120rem) {
+    :root {--zoom-factor: 1.25;}
+    h1, header > div.title > a {font-size: 3rem;}
+    h2 {font-size: 2rem;}
+    h2.component, h3 {font-size: 1.75rem;}
+    p, li {font-size: 1.5rem;}
+    a.btn {font-size: 1.75rem;}
+}
+
+@media (120rem <= width < 160rem) {
+    :root {--zoom-factor: 1.5;}
+    h1, header > div.title > a {font-size: 3.5rem;}
+    h2 {font-size: 2.5rem;}
+    h2.component, h3 {font-size: 2.25rem;}
+    p, li {font-size: 2rem;}
+    a.btn {font-size: 2.25rem;}
+    main > div.wrapper {max-width: 45rem;}
+}
+
+@media (160rem <= width) {
+    :root {--zoom-factor: 2;}
+    h1, header > div.title > a {font-size: 4rem;}
+    h2 {font-size: 3rem;}
+    h2.component, h3 {font-size: 2.75rem;}
+    p, li {font-size: 2.5rem;}
+    a.btn {font-size: 2.75rem;}
+    main > div.wrapper {max-width: 60rem;}
 }
