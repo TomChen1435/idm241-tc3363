@@ -4,11 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpha - Build</title>
-    <link rel="stylesheet" href="../../css/normalize.css">
     <link rel="stylesheet" href="../../css/general.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    
+    <header class="flexbox">
+        <div class="title flexbox">
+            <img src="../../media/images/icon.jpeg" alt="personal icon" class="icon">
+            <a href="../index.html"><span>IDM 241: </span>Microinteractions</a>
+        </div>
+
+        <h1 class="version flexbox first">Alpha</h1>
+    </header>
+
+    <main class="flexbox">
+        <div class="wrapper build">
+            <section class="picture">
+                <img src="../../media/images/optimized/small/san_francisco.avif" alt="San Francisco">
+                <div class="discount flexbox">
+                    <p>-25%</p>
+                </div>
+                <div class="logos flexbox">
+                    <div class="logo klm flexbox">
+                        <img src="../../media/graphics/klm.svg" alt="KLM Logo">
+                    </div>
+                    <div class="logo af flexbox">
+                        <img src="../../media/graphics/air_france.svg" alt="Air France Logo">
+                    </div>
+                </div>
+            </section>
+            
+            <div class="route flexbox">
+                <p>Europe</p>
+                <svg class="flexbox" xmlns="http://www.w3.org/2000/svg"viewbox="0 0 24 24" focusable="false"><path d="m9 20-5-4 5-4v3h13v2H9v3Zm6-8V9H2V7h13V4l5 4-5 4Z"></path></svg>
+                <p>San Francisco</p>
+            </div>
+
+            <p class="price">Starting from : <span>18,750 Miles</span> (Economy)</p>
+        </div>
+
+        <div class="wrapper flying-blue">
+            <a href="https://www.flyingblue.us/en/spend/flights/rewards" class="btn flying-blue" target="_blank">Flying Blue</a>
+        </div>
+
+        <div class="wrapper triggers first">
+            <section class="headings">
+                <h2>Triggers</h2>
+                <h2 class="component">Product Card</h2>
+            </section>
+            
+            <section class="content interactive first">
+                <ul>
+                    <li>Hover on</li>
+                    <li>Hover off</li>
+                    <li>Click</li>
+                </ul>
+            </section>
+        </div>
+        
+        <div class="wrapper rules second">
+            <section class="headings">
+                <h2>Rules</h2>
+                <h2 class="component">Product Card</h2>
+            </section>
+            
+            <section class="content interactive second">
+                <h3>Hover on</h3>
+                <ul>
+                    <li>The cursor changes to a pointer</li>
+                    <li>The image zooms in slightly</li>
+                    <li>All texts become underlined</li>
+                </ul>
+            </section>
+                
+            <section class="content interactive second">
+                <h3>Hover off</h3>
+                <ul>
+                    <li>The cursor changes to an arrow</li>
+                    <li>The image zooms out slightly</li>
+                    <li>All text decorations are removed</li>
+                </ul>
+            </section>        
+
+            <section class="content interactive second">
+                <h3>Click</h3>
+                <ul>
+                    <li>A pop-up window appears with more information</li>
+                </ul>
+            </section>    
+        </div>
+
+        <div class="wrapper feedbacks third">
+            <section class="headings">
+                <h2>Feedbacks</h2>
+                <h2 class="component">Product Card</h2>
+            </section>
+            
+            <section class="content interactive third">
+                <h3>Hover on</h3>
+                <ul>
+                    <li>The cursor changes to a pointer</li>
+                    <li>The image zooms in slightly</li>
+                    <li>All texts become underlined</li>
+                </ul>
+            </section>
+                
+            <section class="content interactive third">
+                <h3>Hover off</h3>
+                <ul>
+                    <li>The cursor changes to an arrow</li>
+                    <li>The image zooms out slightly</li>
+                    <li>All text decorations are removed</li>
+                </ul>
+            </section>        
+
+            <section class="content interactive third">
+                <h3>Click</h3>
+                <ul>
+                    <li>A pop-up window appears with more information</li>
+                </ul>
+            </section>    
+        </div>
+
+        <div class="wrapper loops-modes fourth">
+            <section class="headings">
+                <h2>Loops & Modes</h2>
+                <h2 class="component">Product Card</h2>
+            </section>
+
+            <section class="content interactive fourth">
+                <ul>
+                    <li>When only one of the airlines offers discounted flights to the destination, clicking the product card will directly lead to the airline company's booking site.</li>
+                </ul>
+            </section>
+        </div>
+
+        <div class="wrapper visualize">
+            <a href="https://www.flyingblue.us/en/spend/flights/rewards" class="btn flying-blue" target="_blank">Flying Blue</a>
+
+            <img src="../clip.gif" alt="microinteraction of the original card design" class="screen-recording">
+        </div>
+    </main>
 </body>
 </html>
