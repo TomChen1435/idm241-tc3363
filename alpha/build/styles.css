@@ -86,13 +86,13 @@ p.price > span {
 }
 
 div.build:hover {
+    cursor: pointer;
+
     section.picture > img {
         object-fit: cover;
         transform: scale(1.03);
     }
-}
 
-div.build:hover {
     div.route > p, p.price {
         text-decoration: underline;
     }
