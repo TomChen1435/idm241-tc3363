@@ -43,7 +43,7 @@ div.logos {
 
 div.logo {
     align-items: center;
-    background-color: var(--fb-gray-background);
+    background-color: var(--white1);
     border-radius: 2.5rem;
     justify-content: center;
     height: 5rem;
