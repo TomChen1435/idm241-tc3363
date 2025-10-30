@@ -1,6 +1,5 @@
-*.mp4
-
 .DS_Store
 
 /class_materials
-/media/images/original
+/media/images/stock
+/media/videos/edited
