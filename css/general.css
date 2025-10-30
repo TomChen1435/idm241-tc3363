@@ -401,6 +401,8 @@ section.content {
     flex-direction: column;
 }
 
+video {border-radius: var(--border-radius);}
+
 /* Button to the original site */
 
 div.flying-blue, div.visualize {
