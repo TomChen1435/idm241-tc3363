@@ -1,3 +1,5 @@
+/* This project will use Open Sans, aligning with Flying Blue's branding.  */
+
 @font-face {
     font-family: 'Open Sans';
     src: url('/media/typography/OpenSans.ttf') format('truetype');
@@ -24,7 +26,7 @@
 
 html, body, header {width: 100%;}
 
-body {
+body, section {
     display: flex;
     flex-flow: column nowrap;
 }
@@ -38,6 +40,19 @@ h1, h2, a.btn {
 a {
     cursor: pointer;
     text-decoration: none;
+}
+
+a.btn {
+    align-items: center;
+    border-radius: var(--gap);
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 1.25rem;
+    height: 3rem;
+    justify-content: center;
+    margin: 0 var(--gap-side);
+    padding: 0 var(--gap-side);
+    transition: all 125ms ease-in-out;
 }
 
 /* Header */
@@ -71,7 +86,7 @@ h1.version {
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
-    padding: calc(0.5 * var(--gap)) var(--gap-side);
+    padding: calc(0.75 * var(--gap)) var(--gap-side);
 }
 
 @media (width <= 32.5rem) {
@@ -97,6 +112,7 @@ main {
     width: clamp(20rem, 100%, 80rem);
 }
 
+section.wrapper.build {grid-area: build;}
 section.wrapper.visuals {grid-area: visuals;}
 section.wrapper.triggers {grid-area: triggers;}
 section.wrapper.rules {grid-area: rules;}
@@ -117,24 +133,21 @@ section.wrapper.modes {grid-area: modes;}
     main {grid-template-columns: repeat(3, 1fr);}
 }
 
-section {
-    display: flex;
-    flex-flow: column nowrap;
-}
-
 section.wrapper {
     gap: calc(0.75 * var(--gap));
 }
 
-h1.mi-component {
-    font-size: 1.5rem;
+section.wrapper > * {
     padding: var(--gap) var(--gap-side);
     width: 100%;
 }
 
+h1.mi-component {
+    font-size: 1.5rem;
+}
+
 section.container {
     gap: calc(0.5 * var(--gap));
-    padding: var(--gap) var(--gap-side);
 }
 
 h2 {
@@ -154,6 +167,8 @@ li {
     line-height: 145%;
 }
 
+/* Special design for the video display section. */
+
 section.visuals > section.container {
     align-items: center;
 }
@@ -165,17 +180,4 @@ section.visuals > section.container > * {
 
 video {
     border-radius: var(--gap);
-}
-
-a.btn {
-    align-items: center;
-    border-radius: var(--gap);
-    display: flex;
-    flex-flow: row nowrap;
-    font-size: 1.25rem;
-    height: 3rem;
-    justify-content: center;
-    margin: 0 var(--gap-side);
-    padding: 0 var(--gap-side);
-    transition: all 125ms ease-in-out;
 }
