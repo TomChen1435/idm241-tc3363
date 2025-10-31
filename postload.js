@@ -27,9 +27,14 @@ function makeDescription(miComponent, cDataSets) {
         };
 
         // Generate list content
-        cDataSet.content.forEach((cData) => {
+        cDataSet.content.forEach((cData, index) => {
             const newBulletPoint = document.createElement('li');
-            newBulletPoint.innerHTML = cData;
+            if (index === cDataSet.content.length - 1) {
+                newBulletPoint.innerHTML = `${cData}&#46;`;
+            } else {
+                newBulletPoint.innerHTML = `${cData}&#59;`;
+            }
+            
             unOrderedList.appendChild(newBulletPoint);
         });
 

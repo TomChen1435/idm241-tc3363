@@ -112,8 +112,8 @@ const loopsData = [
 
 const modesData = [
     {
-        component: 'Click-into-collection State',
-        trigger: null, 
+        component: 'Modal',
+        trigger: 'Click-into-collection', 
         content: [
             'The location&#39;s background fades to 100% transparent', 
             'The collection&#39;s background fades to 100% transparent', 
@@ -124,8 +124,8 @@ const modesData = [
         ]
     }, 
     {
-        component: 'Hover-over-background State',
-        trigger: null, 
+        component: 'Modal',
+        trigger: 'Hover-over-background', 
         content: [
             'Text prompts fades out', 
             'The airline links slides to the right', 
