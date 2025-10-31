@@ -37,7 +37,30 @@
         'triggers rules feedbacks'
         'loops rules feedbacks'
         'modes rules feedbacks'
-        'visuals rules feedbacks';
+        'visuals visuals visuals';
+    }
+
+}
+
+@media (width < 64rem) {
+
+    .wrapper.visuals {
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 
+        'mi-component' 
+        'video1'
+        'video2';
+    }
+
+}
+
+@media (64rem <= width) {
+
+    .wrapper.visuals {
+        grid-template-rows: repeat(2, auto);
+        grid-template-areas: 
+        'mi-component mi-component'
+        'video1 video2';
     }
 
 }
