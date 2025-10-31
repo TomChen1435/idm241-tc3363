@@ -23,7 +23,7 @@ const triggersData = [
     }
 ];
 
-const rulesData = [
+const rfData = [
     {
         component: 'Thumbnail',
         trigger: 'Hover On', 
