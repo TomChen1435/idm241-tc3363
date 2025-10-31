@@ -100,7 +100,15 @@ const rfData = [
             'After opening the airline website, fades to the "hover-over-background" state over 125ms'
         ]
     }
-]
+];
+
+const loopsData = [
+    {
+        component: null,
+        trigger: null, 
+        content: ['None']
+    }
+];
 
 const modesData = [
     {
