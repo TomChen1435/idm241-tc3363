@@ -20,16 +20,16 @@ function makeDescription(miComponent, cDataSets) {
 
         // Generate headings
         if (cDataSet.component) {
-            component.textContent = cDataSet.component;
+            component.innerHTML = cDataSet.component;
         };
         if (cDataSet.trigger) {
-            trigger.textContent = `: ${cDataSet.trigger}`;
+            trigger.innerHTML = `&#58; ${cDataSet.trigger}`;
         };
 
         // Generate list content
         cDataSet.content.forEach((cData) => {
             const newBulletPoint = document.createElement('li');
-            newBulletPoint.textContent = cData;
+            newBulletPoint.innerHTML = cData;
             unOrderedList.appendChild(newBulletPoint);
         });
 

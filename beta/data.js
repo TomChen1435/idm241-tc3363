@@ -72,14 +72,14 @@ const rfData = [
         trigger: 'Click', 
         content: [
             'The cursor changes to an arrow', 
-            'The modal fades to the "click-into-collection" state over 125ms'
+            'The modal fades to the &#34;click-into-collection&#34; state over 125ms'
         ]
     }, 
     {
         component: 'Airline Info Collection',
         trigger: 'Hover Off', 
-        conent: [
-            'Switch back to the "hover-over-background" state over 125ms'
+        content: [
+            'Switch back to the &#34;hover-over-background&#34; state over 125ms'
         ]
     }, 
     {
@@ -97,14 +97,14 @@ const rfData = [
         trigger: 'Click', 
         content: [
             'The default browser opens the selected airline company&#39;s website homepage in a new tab', 
-            'After opening the airline website, fades to the "hover-over-background" state over 125ms'
+            'After opening the airline website, fades to the &#34;hover-over-background&#34; state over 125ms'
         ]
     }
 ];
 
 const loopsData = [
     {
-        component: null,
+        component: 'Modal',
         trigger: null, 
         content: ['None']
     }
