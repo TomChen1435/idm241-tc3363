@@ -31,12 +31,12 @@ h1 {
     --luminance: 37.5;
 }
 
-section.container {
+.container {
     --saturation: 30;
     --luminance: 67;
 }
 
-section.wrapper {
+.wrapper {
     --saturation: 10;
     --luminance: 87.5;
 }

@@ -13,7 +13,7 @@ function makeDescription(miComponent, cDataSets) {
         const descriptionClone = descriptionTemplate.content.cloneNode(true);
 
         // Nodes of elements
-        const container = descriptionClone.querySelector('section.container');
+        const container = descriptionClone.querySelector('.container');
         const component = descriptionClone.querySelector('span.component');
         const trigger = descriptionClone.querySelector('span.trigger');
         const unOrderedList = descriptionClone.querySelector('ul.content');

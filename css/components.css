@@ -32,6 +32,9 @@ body, section {
 }
 
 h1, h2, a.btn {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
     font-weight: 550;
     letter-spacing: -0.25px;
     line-height: 125%;
@@ -82,9 +85,6 @@ header h1 {
 }
 
 h1.version {
-    align-items: center;
-    display: flex;
-    flex-flow: row nowrap;
     justify-content: center;
     padding: calc(0.75 * var(--gap)) var(--gap-side);
 }
@@ -112,14 +112,14 @@ main {
     width: clamp(20rem, 100%, 80rem);
 }
 
-section.wrapper.build {grid-area: build;}
-section.wrapper.visuals {grid-area: visuals;}
-section.wrapper.triggers {grid-area: triggers;}
-section.wrapper.rules {grid-area: rules;}
-section.wrapper.feedbacks {grid-area: feedbacks;}
-section.wrapper.loops-modes {grid-area: loops-modes;}
-section.wrapper.loops {grid-area: loops;}
-section.wrapper.modes {grid-area: modes;}
+.wrapper.build {grid-area: build;}
+.wrapper.visuals {grid-area: visuals;}
+.wrapper.triggers {grid-area: triggers;}
+.wrapper.rules {grid-area: rules;}
+.wrapper.feedbacks {grid-area: feedbacks;}
+.wrapper.loops-modes {grid-area: loops-modes;}
+.wrapper.loops {grid-area: loops;}
+.wrapper.modes {grid-area: modes;}
 
 @media (width < 46.5rem) {
     main {grid-template-columns: 1fr;}
@@ -133,11 +133,11 @@ section.wrapper.modes {grid-area: modes;}
     main {grid-template-columns: repeat(3, 1fr);}
 }
 
-section.wrapper {
+.wrapper {
     gap: calc(0.75 * var(--gap));
 }
 
-section.wrapper > * {
+.wrapper > * {
     padding: var(--gap) var(--gap-side);
     width: 100%;
 }
@@ -146,7 +146,7 @@ h1.mi-component {
     font-size: 1.5rem;
 }
 
-section.container {
+.container {
     gap: calc(0.5 * var(--gap));
 }
 
@@ -169,11 +169,28 @@ li {
 
 /* Special design for the video display section. */
 
-section.visuals > section.container {
+.wrapper.visuals {
+    display: grid; 
+
+    h1.mi-component {grid-area: mi-component;}
+    a.btn.flying-blue {grid-area: btn-flying-blue;}
+    .container.video1 {grid-area: video1;}
+    .container.video2 {grid-area: video2;}
+}
+
+@media (width < 64rem) {
+    .wrapper.visuals {grid-template-columns: 1fr;}
+}
+
+@media (64rem <= width) {
+    .wrapper.visuals {grid-template-columns: repeat(2, 1fr);}
+}
+
+.wrapper.visuals > .container {
     align-items: center;
 }
 
-section.visuals > section.container > * {
+.wrapper.visuals > .container > * {
     max-width: 24rem;
     width: 100%;
 }
