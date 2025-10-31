@@ -1,5 +1,7 @@
 @import url('/css/collection.css');
 
+/* Main grid */
+
 @media (width < 46.5rem) {
 
     main {
@@ -38,6 +40,8 @@
 
 }
 
+/* Video display grid */
+
 @media (width < 64rem) {
 
     .wrapper.visuals {
@@ -60,6 +64,8 @@
     }
 
 }
+
+/* Flying Blue webiste link */
 
 .flying-blue {
     --fb-indigo-text: #0800b9;
@@ -89,6 +95,10 @@ a.btn.flying-blue:active {
     color: var(--fb-black-text);
 }
 
+/* Video viewport size */
+
 .wrapper.visuals > .container > * {
     max-width: 24rem;
 }
+
+/* Build section */
