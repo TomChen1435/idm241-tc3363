@@ -1,0 +1,25 @@
+@import url('/css/collection.css');
+
+.flying-blue {
+    --fb-indigo-text: #0800b9;
+    --fb-gray-background: #f0f6ff;
+    --fb-black-text: #1d1d1d;
+    --fb-indigo-background: #09179d;
+    --fb-white-text: #fff;
+}
+
+a.btn.flying-blue {
+    background-color: var(--fb-indigo-background);
+    border: 0.25rem solid var(--fb-indigo-background);
+    color: var(--fb-white-text);
+}
+
+a.btn.flying-blue:hover {
+    background-color: var(--fb-gray-background);
+    color: var(--fb-indigo-text);
+}
+
+a.btn.flying-blue:active {
+    border-color: var(--fb-black-text);
+    color: var(--fb-black-text);
+}

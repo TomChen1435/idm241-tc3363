@@ -1,0 +1,19 @@
+:root {
+    --bg-intensity: 8;
+    --bg-black: oklch(calc(1 / var(--bg-intensity)) 0 0);
+    --bg-white: oklch(calc(1 - (1 / var(--bg-intensity))) 0 0);
+
+    --txt-intensity: 24;
+    --txt-black: oklch(calc(1 / var(--txt-intensity)) 0 0);
+    --txt-white: oklch(calc(1 - (1 / var(--txt-intensity))) 0 0);
+}
+
+* {color: var(--txt-black)}
+
+header {
+    background-color: var(--bg-black);
+}
+
+header h1 {
+    color: var(--txt-white);
+}

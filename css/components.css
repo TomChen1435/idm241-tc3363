@@ -1,0 +1,150 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/media/typography/OpenSans.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('/media/typography/OpenSans-Italic.ttf') format('truetype');
+    font-style: italic;
+}
+
+:root {
+    font-family: 'Open Sans', sans-serif;
+
+    --gap: 0.75rem;
+    --gap-side: calc(2 * var(--gap));
+}
+
+* {
+    box-sizing: border-box;
+    text-wrap: pretty;
+    width: fit-content;
+}
+
+html, body, header {width: 100%;}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+h1, h2, a.btn {
+    font-weight: 550;
+    letter-spacing: -0.25px;
+    line-height: 125%;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+header > a {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: var(--gap);
+    justify-content: flex-start;
+    padding: var(--gap);
+}
+
+img.icon {
+    border-radius: var(--gap);
+    height: 2.5rem;
+}
+
+header h1 {
+    font-size: 1.75rem;
+}
+
+h1.version {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    padding: calc(0.5 * var(--gap)) var(--gap);
+}
+
+@media (width <= 31rem) {
+
+    header > a {
+        justify-content: center;
+        width: 100vw;
+    }
+
+    h1.version {
+        width: 100vw;
+    }
+
+}
+
+/* Main */
+
+main {
+    display: grid;
+    gap: var(--gap);
+}
+
+section {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+section.wrapper {
+    gap: calc(0.75 * var(--gap));
+}
+
+h1.mi-component {
+    font-size: 1.5rem;
+    padding: var(--gap);
+}
+
+section.container {
+    gap: calc(0.5 * var(--gap));
+    padding: var(--gap) 0;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin: 0 var(--gap);
+}
+
+ul {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: calc(0.25 * var(--gap));
+    list-style: disc;
+    margin: 0 var(--gap) 0 calc(2.75 * var(--gap));
+}
+
+li {
+    font-size: 1rem;
+    line-height: 145%;
+}
+
+video {
+    width: clamp(16rem, 100vw, 24rem);
+}
+
+a.btn {
+    align-items: center;
+    border-radius: var(--gap);
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 1.25rem;
+    height: 3rem;
+    justify-content: center;
+    margin: 0 var(--gap);
+    padding: 0 var(--gap);
+    transition: all 125ms ease-in-out;
+}
