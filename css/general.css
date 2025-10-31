@@ -405,7 +405,7 @@ video {border-radius: var(--border-radius);}
 
 /* Button to the original site */
 
-div.flying-blue, div.visualize {
+div.flying-blue, div.visuals {
     animation: breathe4a 10s ease-in-out infinite;
     background-color: var(--background-alt);
 }

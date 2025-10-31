@@ -64,7 +64,7 @@ const rfData = [
         trigger: 'Hover On', 
         content: [
             'The cursor changes to a pointer', 
-            'The collection&#39;s background fades to a solid tint of blue from the half-opaque white over 125ms'
+            'The collection&#39;s background fades to a solid tint of blue from the half&#45;opaque white over 125ms'
         ]
     }, 
     {
@@ -72,14 +72,14 @@ const rfData = [
         trigger: 'Click', 
         content: [
             'The cursor changes to an arrow', 
-            'The modal fades to the &#34;click-into-collection&#34; state over 125ms'
+            'The modal fades to the &#34;click&#45;into&#45;collection&#34; state over 125ms'
         ]
     }, 
     {
         component: 'Airline Info Collection',
         trigger: 'Hover Off', 
         content: [
-            'Switch back to the &#34;hover-over-background&#34; state over 125ms'
+            'Switch back to the &#34;hover&#45;over&#45;background&#34; state over 125ms'
         ]
     }, 
     {
@@ -97,7 +97,7 @@ const rfData = [
         trigger: 'Click', 
         content: [
             'The default browser opens the selected airline company&#39;s website homepage in a new tab', 
-            'After opening the airline website, fades to the &#34;hover-over-background&#34; state over 125ms'
+            'After opening the airline website, fades to the &#34;hover&#45;over&#45;background&#34; state over 125ms'
         ]
     }
 ];
@@ -113,10 +113,10 @@ const loopsData = [
 const modesData = [
     {
         component: 'Modal',
-        trigger: 'Click-into-collection', 
+        trigger: 'Click&#45;into&#45;collection', 
         content: [
-            'The location&#39;s background fades to 100% transparent', 
-            'The collection&#39;s background fades to 100% transparent', 
+            'The location&#39;s background fades to 100&#37; transparent', 
+            'The collection&#39;s background fades to 100&#37; transparent', 
             'The price&#39;s background fades to yellow', 
             'The airline information slides to the center', 
             'Text prompts fades in', 
@@ -125,12 +125,12 @@ const modesData = [
     }, 
     {
         component: 'Modal',
-        trigger: 'Hover-over-background', 
+        trigger: 'Hover&#45;over&#45;background', 
         content: [
             'Text prompts fades out', 
             'The airline links slides to the right', 
-            'The collection&#39;s background fades to half-transparent white', 
-            'The location&#39;s background fades to half-transparent white', 
+            'The collection&#39;s background fades to half&#45;transparent white', 
+            'The location&#39;s background fades to half&#45;transparent white', 
             'The price&#39;s background fades to a light tint of blue', 
             'Background image fades from a solid tint of blue to the image in the active tumbnail'
         ]

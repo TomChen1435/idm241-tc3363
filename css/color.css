@@ -3,17 +3,48 @@
     --bg-black: oklch(calc(1 / var(--bg-intensity)) 0 0);
     --bg-white: oklch(calc(1 - (1 / var(--bg-intensity))) 0 0);
 
-    --txt-intensity: 24;
+    --txt-intensity: 32;
     --txt-black: oklch(calc(1 / var(--txt-intensity)) 0 0);
     --txt-white: oklch(calc(1 - (1 / var(--txt-intensity))) 0 0);
 }
 
 * {color: var(--txt-black)}
 
+h1 {
+    color: var(--txt-white);
+}
+
 header {
     background-color: var(--bg-black);
 }
 
-header h1 {
-    color: var(--txt-white);
+h1.course-name {background: none;}
+
+.version.alpha, .triggers {--hue: 135;}
+.version.beta, .rules {--hue: 210;}
+.version.final, .feedbacks {--hue: 270;}
+.version.case-study, .loops-modes, .loops, .modes {--hue: 300;}
+.visuals {--hue: 330;}
+
+h1 {
+    --saturation: 50;
+    --luminance: 37.5;
+}
+
+section.container {
+    --saturation: 30;
+    --luminance: 67;
+}
+
+section.wrapper {
+    --saturation: 10;
+    --luminance: 87.5;
+}
+
+h1, section {
+    background-color: hsl(
+        var(--hue, 0) 
+        var(--saturation, 0) 
+        var(--luminance, 100)
+    );
 }

@@ -9,6 +9,7 @@
 }
 
 a.btn.flying-blue {
+    align-self: center;
     background-color: var(--fb-indigo-background);
     border: 0.25rem solid var(--fb-indigo-background);
     color: var(--fb-white-text);
@@ -22,4 +23,44 @@ a.btn.flying-blue:hover {
 a.btn.flying-blue:active {
     border-color: var(--fb-black-text);
     color: var(--fb-black-text);
+}
+
+@media (width < 46.5rem) {
+
+    main {
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: 
+        'triggers'
+        'rules'
+        'feedbacks'
+        'loops-modes'
+        'visuals';
+    }
+
+}
+
+@media (46.5rem <= width) {
+
+    main {
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: 
+        'triggers rules'
+        'feedbacks rules'
+        'feedbacks visuals'
+        'loops-modes visuals'
+        '. visuals';
+    }
+
+}
+
+@media (64rem <= width) {
+
+    main {
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 
+        'triggers rules visuals'
+        'feedbacks rules visuals'
+        'feedbacks loops-modes visuals';
+    }
+
 }
