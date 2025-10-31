@@ -191,7 +191,6 @@ li {
 }
 
 .wrapper.visuals > .container > * {
-    max-width: 24rem;
     width: 100%;
 }
 

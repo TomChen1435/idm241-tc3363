@@ -64,3 +64,7 @@
     }
 
 }
+
+.wrapper.visuals > .container > * {
+    max-width: 46.5rem;
+}

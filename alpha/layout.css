@@ -88,3 +88,7 @@ a.btn.flying-blue:active {
     border-color: var(--fb-black-text);
     color: var(--fb-black-text);
 }
+
+.wrapper.visuals > .container > * {
+    max-width: 24rem;
+}
