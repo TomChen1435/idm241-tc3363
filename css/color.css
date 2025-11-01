@@ -1,24 +1,41 @@
+/* Grayscale */
+
 :root {
     --bg-intensity: 8;
-    --bg-black: oklch(calc(1 / var(--bg-intensity)) 0 0);
-    --bg-white: oklch(calc(1 - (1 / var(--bg-intensity))) 0 0);
-
     --txt-intensity: 32;
-    --txt-black: oklch(calc(1 / var(--txt-intensity)) 0 0);
-    --txt-white: oklch(calc(1 - (1 / var(--txt-intensity))) 0 0);
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-black: oklch(calc(1 / var(--bg-intensity)) 0 0);
+        --bg-white: oklch(calc(1 - (1 / var(--bg-intensity))) 0 0);
+
+        --txt-black: oklch(calc(1 / var(--txt-intensity)) 0 0);
+        --txt-white: oklch(calc(1 - (1 / var(--txt-intensity))) 0 0);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-white: oklch(calc(1 / var(--bg-intensity)) 0 0);
+        --bg-black: oklch(calc(1 - (1 / var(--bg-intensity))) 0 0);
+
+        --txt-white: oklch(calc(1 / var(--txt-intensity)) 0 0);
+        --txt-black: oklch(calc(1 - (1 / var(--txt-intensity))) 0 0);
+    }
 }
 
 * {color: var(--txt-black)}
 
-h1 {
-    color: var(--txt-white);
-}
+body {background-color: var(--bg-white);}
 
-header {
-    background-color: var(--bg-black);
-}
+header {background-color: var(--bg-black);}
+
+h1 {color: var(--txt-white);}
 
 h1.course-name {background: none;}
+
+/* Colors */
 
 .version.alpha, .triggers {--hue: 135;}
 .version.beta, .rules {--hue: 210;}
@@ -26,19 +43,38 @@ h1.course-name {background: none;}
 .version.case-study, .loops-modes, .loops, .modes {--hue: 300;}
 .visuals {--hue: 330;}
 
-h1 {
-    --saturation: 50;
-    --luminance: 37.5;
+@media (prefers-color-scheme: light) {
+    h1 {
+        --saturation: 50;
+        --luminance: 40;
+    }
+
+    .container {
+        --saturation: 35;
+        --luminance: 55;
+    }
+
+    .wrapper {
+        --saturation: 20;
+        --luminance: 70;
+    }
 }
 
-.container {
-    --saturation: 30;
-    --luminance: 67;
-}
+@media (prefers-color-scheme: dark) {
+    h1 {
+        --saturation: 30;
+        --luminance: 70;
+    }
 
-.wrapper {
-    --saturation: 10;
-    --luminance: 87.5;
+    .container {
+        --saturation: 50;
+        --luminance: 30;
+    }
+
+    .wrapper {
+        --saturation: 60;
+        --luminance: 15;
+    }
 }
 
 h1, section {

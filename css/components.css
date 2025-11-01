@@ -102,7 +102,7 @@ h1.version {
 
 }
 
-/* Main */
+/* Main grid */
 
 main {
     align-self: center;
@@ -132,6 +132,8 @@ main {
 @media (64rem <= width) {
     main {grid-template-columns: repeat(3, 1fr);}
 }
+
+/* Blocks */
 
 .wrapper {
     gap: calc(0.75 * var(--gap));
@@ -167,24 +169,7 @@ li {
     line-height: 145%;
 }
 
-/* Special design for the video display section. */
-
-.wrapper.visuals {
-    display: grid; 
-
-    h1.mi-component {grid-area: mi-component;}
-    a.btn.flying-blue {grid-area: btn-flying-blue;}
-    .container.video1 {grid-area: video1;}
-    .container.video2 {grid-area: video2;}
-}
-
-@media (width < 64rem) {
-    .wrapper.visuals {grid-template-columns: 1fr;}
-}
-
-@media (64rem <= width) {
-    .wrapper.visuals {grid-template-columns: repeat(2, 1fr);}
-}
+/* Special design for the visuals section. */
 
 .wrapper.visuals > .container {
     align-items: center;
