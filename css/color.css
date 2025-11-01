@@ -37,50 +37,46 @@ h1.course-name {background: none;}
 
 /* Colors */
 
-.version.alpha, .triggers {--hue: 135;}
-.version.beta, .rules {--hue: 210;}
-.version.final, .feedbacks {--hue: 270;}
-.version.case-study, .loops-modes, .loops, .modes {--hue: 300;}
-.visuals {--hue: 330;}
+.visuals {--hue: 60;}
+.version.alpha, .triggers {--hue: 150;}
+.version.beta, .rules {--hue: 240;}
+.version.final, .feedbacks {--hue: 300;}
+.version.case-study, .loops-modes, .loops, .modes {--hue: 0;}
 
 @media (prefers-color-scheme: light) {
     h1 {
-        --saturation: 50;
-        --luminance: 40;
-    }
-
-    .container {
-        --saturation: 35;
-        --luminance: 55;
+        --chroma: 0.2;
+        --luminance: 0.5;
     }
 
     .wrapper {
-        --saturation: 20;
-        --luminance: 70;
+        --chroma: 0.15;
+        --luminance: 0.625;
+    }
+
+    .container {
+        --chroma: 0.1;
+        --luminance: 0.75;
     }
 }
 
 @media (prefers-color-scheme: dark) {
     h1 {
-        --saturation: 30;
-        --luminance: 70;
-    }
-
-    .container {
-        --saturation: 50;
-        --luminance: 30;
+        --chroma: 0.1;
+        --luminance: 0.75;
     }
 
     .wrapper {
-        --saturation: 60;
-        --luminance: 15;
+        --chroma: 0.15;
+        --luminance: 0.6;
+    }
+
+    .container {
+        --chroma: 0.2;
+        --luminance: 0.45;
     }
 }
 
 h1, section {
-    background-color: hsl(
-        var(--hue, 0) 
-        var(--saturation, 0) 
-        var(--luminance, 100)
-    );
+    background-color: oklch(var(--luminance) var(--chroma) var(--hue));
 }
