@@ -70,5 +70,42 @@
         makeDescription("loops-modes", lmData); 
     </script>
 
+    <style>
+        @media (width < 46.5rem) {
+
+            main {
+                grid-template-areas: 
+                'visuals'
+                'triggers'
+                'rules'
+                'feedbacks'
+                'loops-modes';
+            }
+
+        }
+
+        @media (46.5rem <= width) {
+
+            main {
+                grid-template-areas: 
+                'visuals triggers'
+                'visuals rules'
+                'feedbacks loops-modes';
+            }
+
+        }
+
+        @media (64rem <= width) {
+
+            main {
+                grid-template-areas: 
+                'visuals visuals visuals'
+                'triggers rules feedbacks'
+                'loops-modes rules feedbacks';
+            }
+
+        }
+    </style>
+
 </body>
 </html>
