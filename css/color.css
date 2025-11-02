@@ -1,81 +1,79 @@
 /* Grayscale */
 
 :root {
-    --bg-intensity: 8;
-    --txt-intensity: 32;
+    --bg-intensity: 6;
+    --txt-intensity: 18;
 }
 
 @media (prefers-color-scheme: light) {
     :root {
-        --bg-black: oklch(calc(1 / var(--bg-intensity)) 0 0);
-        --bg-white: oklch(calc(1 - (1 / var(--bg-intensity))) 0 0);
+        --bg-black: oklab(calc(1 / var(--bg-intensity)) 0 0);
+        --bg-white: oklab(calc(1 - (1 / var(--bg-intensity))) 0 0);
 
-        --txt-black: oklch(calc(1 / var(--txt-intensity)) 0 0);
-        --txt-white: oklch(calc(1 - (1 / var(--txt-intensity))) 0 0);
+        --bg-gray: oklab(0.35 0 0);
+
+        --txt-black: oklab(calc(1 / var(--txt-intensity)) 0 0);
+        --txt-white: oklab(calc(1 - (1 / var(--txt-intensity))) 0 0);
     }
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-white: oklch(calc(1 / var(--bg-intensity)) 0 0);
-        --bg-black: oklch(calc(1 - (1 / var(--bg-intensity))) 0 0);
+        --bg-white: oklab(calc(1 / var(--bg-intensity)) 0 0);
+        --bg-black: oklab(calc(1 - (1 / var(--bg-intensity))) 0 0);
 
-        --txt-white: oklch(calc(1 / var(--txt-intensity)) 0 0);
-        --txt-black: oklch(calc(1 - (1 / var(--txt-intensity))) 0 0);
+        --bg-gray: oklab(0.65 0 0);
+
+        --txt-white: oklab(calc(1 / var(--txt-intensity)) 0 0);
+        --txt-black: oklab(calc(1 - (1 / var(--txt-intensity))) 0 0);
     }
 }
 
-* {color: var(--txt-black)}
+* {color: var(--txt-white)}
 
 body {background-color: var(--bg-white);}
 
-header {background-color: var(--bg-black);}
+header, .visuals > * {background-color: var(--bg-black);}
 
-h1 {color: var(--txt-white);}
+.wrapper.visuals {background-color: var(--bg-gray);}
 
 h1.course-name {background: none;}
 
 /* Colors */
 
-.visuals {--hue: 60;}
-.version.alpha, .triggers {--hue: 150;}
-.version.beta, .rules {--hue: 240;}
-.version.final, .feedbacks {--hue: 300;}
-.version.case-study, .loops-modes, .loops, .modes {--hue: 0;}
+.version.alpha, .triggers {--hue: 155;}
+.version.beta, .rules {--hue: 275;}
+.version.final, .feedbacks {--hue: 315;}
+.version.case-study, .loops-modes, .loops, .modes {--hue: 350;}
 
 @media (prefers-color-scheme: light) {
-    h1 {
-        --chroma: 0.2;
-        --luminance: 0.5;
+
+    h1, .container {
+        --luminance: 0.45;
+        --chroma: 0.35;
     }
 
     .wrapper {
+        --luminance: 0.9;
         --chroma: 0.15;
-        --luminance: 0.625;
     }
 
-    .container {
-        --chroma: 0.1;
-        --luminance: 0.75;
-    }
 }
 
 @media (prefers-color-scheme: dark) {
-    h1 {
-        --chroma: 0.1;
-        --luminance: 0.75;
+
+    h1, .container {
+        --luminance: 0.8;
+        --chroma: 0.15;
     }
 
     .wrapper {
-        --chroma: 0.15;
         --luminance: 0.6;
+        --chroma: 0.2;
     }
 
-    .container {
-        --chroma: 0.2;
-        --luminance: 0.45;
-    }
 }
+
 
 h1, section {
     background-color: oklch(var(--luminance) var(--chroma) var(--hue));
