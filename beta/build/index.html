@@ -23,7 +23,24 @@
             <section class="container">
                 <h2><span class="component">Modal</span><span class="trigger"></span></h2>
                 <div id="bb">
-                    
+                    <img id="bb-banner">
+                    <h1 id="bb-location"></h1>
+                    <div id="bb-collection">
+                        <p id="bb-prompt">Both of our members fly to this destination<br><span>Choose Your Carrier</span></p>
+                        <div id="bb-af-link">
+                            <img src="/media/graphics/air_france.svg" alt="Air France Logo">
+                            <p>from Paris Charles de Gaulle Airport &#40;CDG&#41;</p>
+                        </div>
+                        <div id="bb-klm-link">
+                            <img src="/media/graphics/klm.svg" alt="KLM Logo">
+                            <p>from Amsterdam Airport Schiphol &#40;AMS&#41;</p>
+                        </div>
+                    </div>
+                    <div id="bb-price">
+                        <p>Economy Seats<br>Starting from</p>
+                        <h2>18,750 Miles</h2>
+                    </div>
+                    <div id="bb-carousel"></div>
                 </div>
         </section>
 
@@ -62,6 +79,12 @@
         makeDescription('loops', loopsData); 
         makeDescription('modes', modesData); 
     </script>
+
+    <script src="./javascript/content.js"></script>
+
+    <style>
+        body {min-width: 43rem;}
+    </style>
 
 </body>
 </html>
