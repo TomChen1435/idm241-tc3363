@@ -48,14 +48,6 @@
 
 /* Flying Blue webiste link */
 
-.flying-blue, #ab {
-    --fb-indigo-text: #0800b9;
-    --fb-gray-background: #f0f6ff;
-    --fb-black-text: #1d1d1d;
-    --fb-indigo-background: #09179d;
-    --fb-white-text: #fff;
-}
-
 a.btn.flying-blue {
     align-self: center;
     background-color: var(--fb-indigo-background);

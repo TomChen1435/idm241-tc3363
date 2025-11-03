@@ -74,7 +74,16 @@ h1.course-name {background: none;}
 
 }
 
-
 h1, section {
     background-color: oklch(var(--luminance) var(--chroma) var(--hue));
+}
+
+/* Flying Blue brand colors */
+
+:root {
+    --fb-indigo-text: #0800b9;
+    --fb-gray-background: #f0f6ff;
+    --fb-black-text: #1d1d1d;
+    --fb-indigo-background: #09179d;
+    --fb-white-text: #fff;
 }
