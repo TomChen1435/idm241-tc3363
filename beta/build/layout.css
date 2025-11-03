@@ -100,7 +100,7 @@ h1#bb-location {
         display: none;
     }
 
-    div {
+    a {
         display: flex; 
         flex-flow: row nowrap;
         justify-content: center;
