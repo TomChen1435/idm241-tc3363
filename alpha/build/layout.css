@@ -1,0 +1,140 @@
+@import url('/css/collection.css');
+
+/* Main grid template */
+
+@media (width < 46.5rem) {
+
+    main {
+        grid-template-areas: 
+        'visuals'
+        'triggers'
+        'rules'
+        'feedbacks'
+        'loops-modes';
+    }
+
+}
+
+@media (46.5rem <= width) {
+
+    main {
+        grid-template-areas: 
+        'visuals triggers'
+        'visuals rules'
+        'feedbacks loops-modes';
+    }
+
+}
+
+@media (64rem <= width) {
+
+    main {
+        grid-template-areas: 
+        'visuals visuals visuals'
+        'triggers rules feedbacks'
+        'loops-modes rules feedbacks';
+    }
+
+}
+
+/* Visuals section - max width */
+
+.wrapper.visuals > .container > * {
+    max-width: 24rem;
+}
+
+/* Build section */
+
+#ab {
+    background-color: oklab(0.975 0 0);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-self: center;
+    padding: 0.5rem;
+}
+
+#ab * {
+    max-width: 100%;
+}
+
+#ab-image-wrap {
+    border-radius: 1rem;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+}
+
+#ab-banner {
+    display: block;
+}
+
+#ab-discount {
+    align-items: center;
+    background-color: var(--fb-indigo-background);
+    border-radius: 0.5rem;
+    bottom: 0.5rem;
+    color: var(--fb-white-text);
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 1rem;
+    justify-content: center;
+    left: 0.5rem;
+    padding: 0.375rem 0.5rem;
+    position: absolute;
+    width: fit-content;
+}
+
+#ab-airline-logo {
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    background-color: var(--fb-gray-background);
+    border-radius: 2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    margin: -2.5rem 1rem -1rem;
+    justify-content: center;
+    align-self: flex-end;
+    width: 4rem;
+    z-index: 10;
+}
+
+#ab-klm-logo {
+    width: 2.5rem;
+}
+
+#ab-texts {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.25rem;
+    margin: 0.5rem;
+    width: fit-content;
+}
+
+#ab-texts > p {
+    color: var(--fb-black-text);
+    line-height: 145%;
+    width: fit-content;
+}
+
+#ab-city {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+#ab-em {
+    color: var(--fb-indigo-text);
+    font-weight: 600;
+}
+
+#ab:hover {
+
+    #ab-banner {
+        transform: scale(1.035);
+    }
+
+    #ab-texts > p {
+        text-decoration: underline;
+    }
+
+}

@@ -182,3 +182,24 @@ li {
 video {
     border-radius: var(--gap);
 }
+
+/* Flying Blue webiste link */
+
+a.btn.flying-blue {
+    align-self: center;
+    background-color: var(--fb-indigo-background);
+    border: 0.25rem solid var(--fb-indigo-background);
+    color: var(--fb-white-text);
+    justify-self: center;
+    width: fit-content;
+}
+
+a.btn.flying-blue:hover {
+    background-color: var(--fb-gray-background);
+    color: var(--fb-indigo-text);
+}
+
+a.btn.flying-blue:active {
+    border-color: var(--fb-black-text);
+    color: var(--fb-black-text);
+}

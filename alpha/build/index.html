@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IDM 241: Alpha</title>
-    <link rel="stylesheet" href="../layout.css">
+    <link rel="stylesheet" href="./layout.css">
 </head>
 <body>
     
@@ -69,43 +69,6 @@
         makeDescription("feedbacks", rfData);
         makeDescription("loops-modes", lmData); 
     </script>
-
-    <style>
-        @media (width < 46.5rem) {
-
-            main {
-                grid-template-areas: 
-                'visuals'
-                'triggers'
-                'rules'
-                'feedbacks'
-                'loops-modes';
-            }
-
-        }
-
-        @media (46.5rem <= width) {
-
-            main {
-                grid-template-areas: 
-                'visuals triggers'
-                'visuals rules'
-                'feedbacks loops-modes';
-            }
-
-        }
-
-        @media (64rem <= width) {
-
-            main {
-                grid-template-areas: 
-                'visuals visuals visuals'
-                'triggers rules feedbacks'
-                'loops-modes rules feedbacks';
-            }
-
-        }
-    </style>
 
 </body>
 </html>
