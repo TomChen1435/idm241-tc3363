@@ -39,7 +39,7 @@ const rfData = [
         trigger: 'Click', 
         content: [
             'The clicked thumbnail slides to the center', 
-            'The background image fades to bright gray over 50ms, remains bright gray for 75ms, and then fades again to the image in the thumbnail over 50ms', 
+            'The background image fades to the image in the thumbnail over 50ms', 
             'The location fades to align with the thunmbnail&#39;s content over 50ms'
         ]
     }, 
