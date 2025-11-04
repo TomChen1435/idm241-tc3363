@@ -45,8 +45,6 @@
 
 }
 
-/* Visuals section - max width */
-
 /* The modal is not a responsive design. The width is fixed at 40rem. */
 
 body {
@@ -63,7 +61,6 @@ body {
     display: inline-block;
     overflow: hidden;
     position: relative;
-    /* transition-timing-function: ease-in-out; */
 }
 
 #bb * {
@@ -90,13 +87,10 @@ body {
     padding-bottom: 1rem; 
     position: absolute;
     top: 0;
-    /* transition: all 125ms; */
     width: 100%;
 }
 
-#bb-hover-board * {
-    /* transition-property: all; */
-}
+/* Location text at the top left corner */
 
 h1#bb-location, #bb-price {
     align-items: center;
@@ -115,6 +109,8 @@ h1#bb-location {
     font-weight: 650;
     line-height: 100%;
 }
+
+/* Airline collection section */
 
 #bb-collection {
     align-items: flex-end;
@@ -168,13 +164,14 @@ h1#bb-location {
     background-color: var(--fb-gray-background);
 }
 
+/* Price section */
+
 #bb-price {
     background-color: var(--fb-gray-background);
     border-radius: 0 1rem 1rem 0;
     gap: 0.75rem;
     left: -19.5625rem;
     position: relative;
-    /* transition: background-color 125ms; */
 
     p {
         font-size: 0.875rem;
@@ -190,15 +187,7 @@ h1#bb-location {
     }
 }
 
-/* 
-#bb-collection {
-    transition-property: background-color, transform;
-    transition-duration: 125ms;
-}
-
-#bb-price {
-    transition: transform 125ms;
-} */
+/* When hover over the background image */
 
 #bb-hover-board:hover #bb-collection {
     transform: translateX(-35.625rem);
@@ -227,7 +216,7 @@ h1#bb-location {
             line-height: 75%; 
         }
 
-        .p2 {
+        p.bb-prompt.p2 {
                 font-weight: 550;
                 padding-bottom: 1rem;
             }
@@ -270,6 +259,8 @@ h1#bb-location {
     }
 }
 
+/* Carousel */
+
 #bb-carousel-wrap {
     background-color: oklab(1 0 0 / 50%);
     bottom: 0;
@@ -286,7 +277,6 @@ h1#bb-location {
     justify-content: center;
     left: 16.5rem;
     position: relative;
-    /* transition-property: all; */
 
     img {
         border-radius: 0.75rem;
