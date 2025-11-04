@@ -23,16 +23,25 @@
             <section class="container">
                 <h2><span class="component">Modal</span><span class="trigger"></span></h2>
                 <div id="bb">
-                    <img id="bb-banner">
-                    <h1 id="bb-location"></h1>
-                    <div id="hover-board">
+                    <img src="/media/images/avif/atlanta.avif" id="bb-banner">
+                    <div id="bb-hover-board">
+                        <h1 id="bb-location">Atlanta</h1>
                         <div id="bb-collection">
-                            <p id="bb-prompt">Both of our members fly to this destination<br><span>Choose Your Carrier</span></p>
-                            <a src="https://wwws.airfrance.us/" target="_blank" id="bb-af-link">
+                            <p class="bb-prompt p1">Both of our members fly to this destination</p>
+                            <p class="bb-prompt p2">Choose Your Carrier</p>
+                            <div id="bb-af">
+                                <img src="/media/graphics/air_france.svg" alt="Air France Logo">
+                                <p>from Paris Charles de Gaulle Airport &#40;CDG&#41;</p>
+                            </div>
+                            <a href="https://wwws.airfrance.us/" target="_blank" id="bb-af-link">
                                 <img src="/media/graphics/air_france.svg" alt="Air France Logo">
                                 <p>from Paris Charles de Gaulle Airport &#40;CDG&#41;</p>
                             </a>
-                            <a src="https://www.klm.com/" target="_blank" id="bb-klm-link">
+                            <div id="bb-klm">
+                                <img src="/media/graphics/klm.svg" alt="KLM Logo">
+                                <p>from Amsterdam Airport Schiphol &#40;AMS&#41;</p>
+                            </div>
+                            <a href="https://www.klm.com/" target="_blank" id="bb-klm-link">
                                 <img src="/media/graphics/klm.svg" alt="KLM Logo">
                                 <p>from Amsterdam Airport Schiphol &#40;AMS&#41;</p>
                             </a>
@@ -42,7 +51,9 @@
                             <h2>18,750 Miles</h2>
                         </div>
                     </div>
-                    <div id="bb-carousel"></div>
+                    <div id="bb-carousel-wrap">
+                        <div id="bb-carousel"></div>
+                    </div>
                 </div>
             </section>
         </section>

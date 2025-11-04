@@ -60,12 +60,42 @@ body {
 /* Build section */
 
 #bb {
-    height: 25rem;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    /* transition-timing-function: ease-in-out; */
+}
+
+#bb * {
+    transition: all 125ms ease-in-out;
 }
 
 #bb p {
     color: var(--fb-black-text);
     font-weight: 400;
+}
+
+#bb-banner {
+    height: 100%;
+    width: 100%;
+}
+
+#bb-hover-board {
+    display: flex;
+    flex-flow: column nowrap;
+    height: 19.875rem;
+    justify-content: space-between;
+    left: 0;
+    overflow: hidden;
+    padding-bottom: 1rem; 
+    position: absolute;
+    top: 0;
+    /* transition: all 125ms; */
+    width: 100%;
+}
+
+#bb-hover-board * {
+    /* transition-property: all; */
 }
 
 h1#bb-location, #bb-price {
@@ -83,24 +113,29 @@ h1#bb-location {
     color: var(--fb-indigo-text);
     font-size: 2.25rem;
     font-weight: 650;
+    line-height: 100%;
 }
 
 #bb-collection {
     align-items: flex-end;
+    align-self: flex-end;
     background-color: oklab(1 0 0 / 85%);
     border-radius: 1rem 0 0 1rem;
+    cursor: pointer;
     display: flex; 
     flex-flow: column nowrap;
     gap: 0.5rem;
     justify-content: center;
     padding: 1rem;
+    position: relative;
+    right: -35.625rem;
     width: fit-content;
 
-    p#bb-prompt {
+    p.bb-prompt, a {
         display: none;
     }
 
-    a {
+    div {
         display: flex; 
         flex-flow: row nowrap;
         justify-content: center;
@@ -112,7 +147,7 @@ h1#bb-location {
         }
     }
 
-    #bb-af-link {
+    #bb-af {
         align-items: center;
 
         img {
@@ -120,7 +155,7 @@ h1#bb-location {
         }
     }
 
-    #bb-klm-link {
+    #bb-klm {
         align-items: flex-end;
 
         img {
@@ -129,10 +164,17 @@ h1#bb-location {
     }
 }
 
+#bb-collection:hover {
+    background-color: var(--fb-gray-background);
+}
+
 #bb-price {
     background-color: var(--fb-gray-background);
     border-radius: 0 1rem 1rem 0;
     gap: 0.75rem;
+    left: -19.5625rem;
+    position: relative;
+    /* transition: background-color 125ms; */
 
     p {
         font-size: 0.875rem;
@@ -145,5 +187,112 @@ h1#bb-location {
         font-size: 1.75rem;
         font-weight: 650;
         line-height: 130%;
+    }
+}
+
+/* 
+#bb-collection {
+    transition-property: background-color, transform;
+    transition-duration: 125ms;
+}
+
+#bb-price {
+    transition: transform 125ms;
+} */
+
+#bb-hover-board:hover #bb-collection {
+    transform: translateX(-35.625rem);
+}
+
+#bb-hover-board:hover #bb-price {
+    transform: translateX(19.5625rem);
+}
+
+#bb-hover-board.l2 {
+    background-color: var(--fb-gray-background);
+
+    h1#bb-location {
+        background: none;
+    }
+
+    #bb-collection {
+        align-items: center;
+        align-self: center;
+        background: none;
+        cursor: default;
+
+        p.bb-prompt {
+            display: block;
+            font-size: 1.25rem;
+            line-height: 75%; 
+        }
+
+        .p2 {
+                font-weight: 550;
+                padding-bottom: 1rem;
+            }
+
+        div {
+            display: none;
+        }
+
+        a {
+            display: flex; 
+            flex-flow: row nowrap;
+            justify-content: center;
+            gap: 0.75rem;
+
+            p {
+                font-size: 1rem;
+                line-height: 75%;
+            }
+        }
+
+        #bb-af-link {
+            align-items: center;
+
+            img {
+                height: 1.25rem;
+            }
+        }
+
+        #bb-klm-link {
+            align-items: flex-end;
+
+            img {
+                height: 2rem;
+            }
+        }
+    }
+
+    #bb-price {
+        background-color: #fc0;
+    }
+}
+
+#bb-carousel-wrap {
+    background-color: oklab(1 0 0 / 50%);
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    position: absolute;
+}
+
+#bb-carousel {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    justify-content: center;
+    left: 16.5rem;
+    position: relative;
+    /* transition-property: all; */
+
+    img {
+        border-radius: 0.75rem;
+        box-shadow: 0 0 0.5rem 0.125rem oklab(0 0 0 / 25%);
+        cursor: pointer;
+        height: 3.125rem;
+        width: 5rem;
     }
 }
