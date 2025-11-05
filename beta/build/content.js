@@ -21,6 +21,7 @@ const bbCarousel = document.querySelector('#bb-carousel');
 const bbBanner = document.querySelector('#bb-banner');
 const bbHoverBoard = document.querySelector('#bb-hover-board')
 const bbLocation = document.querySelector('#bb-location');
+const closeBtn = document.querySelector('#bb-close-btn');
 const bbCollection = document.querySelector('#bb-collection');
 const bbAFLink = document.querySelector('#bb-af-link');
 const bbKLMLink = document.querySelector('#bb-klm-link');
@@ -126,6 +127,7 @@ bbCollection.addEventListener('click', () => {rolling("add")});
 
 // When no longer hovering above the collection section or after clicking the airline links, switch back to the "hover-over-background" state 
 
-bbCollection.addEventListener('mouseleave', () => {rolling("remove")});
+// bbCollection.addEventListener('mouseleave', () => {rolling("remove")});
+closeBtn.addEventListener('click', () => {rolling("remove")});
 bbAFLink.addEventListener('click', () => {rolling("remove")});
 bbKLMLink.addEventListener('click', () => {rolling("remove")});
