@@ -47,16 +47,16 @@ const rfData = [
         component: 'Background Image',
         trigger: 'Hover On', 
         content: [
-            'Airline info collection slides in from the right over 125ms', 
-            'Price info section slides in from the left over 125ms'
+            'Airline info collection slides in from the right over 250ms', 
+            'Price info section slides in from the left over 250ms'
         ]
     }, 
     {
         component: 'Background Image',
         trigger: 'Hover Off', 
         content: [
-            'Airline info collection slides out to the right over 125ms', 
-            'Price info section slides out to the left over 125ms'
+            'Airline info collection slides out to the right over 250ms', 
+            'Price info section slides out to the left over 250ms'
         ]
     }, 
     {
@@ -64,7 +64,7 @@ const rfData = [
         trigger: 'Hover On', 
         content: [
             'The cursor changes to a pointer', 
-            'The collection&#39;s background fades to a solid tint of blue from the half&#45;opaque white over 125ms'
+            'The collection&#39;s background fades to a solid tint of blue from the half&#45;opaque white over 250ms'
         ]
     }, 
     {
@@ -72,14 +72,14 @@ const rfData = [
         trigger: 'Click', 
         content: [
             'The cursor changes to an arrow', 
-            'The modal fades to the &#34;click&#45;into&#45;collection&#34; state over 125ms'
+            'The modal fades to the &#34;click&#45;into&#45;collection&#34; state over 500ms'
         ]
     }, 
     {
         component: 'Airline Info Collection',
         trigger: 'Hover Off', 
         content: [
-            'Switch back to the &#34;hover&#45;over&#45;background&#34; state over 125ms'
+            'Switch back to the &#34;hover&#45;over&#45;background&#34; state over 500ms'
         ]
     }, 
     {
@@ -97,7 +97,7 @@ const rfData = [
         trigger: 'Click', 
         content: [
             'The default browser opens the selected airline company&#39;s website homepage in a new tab', 
-            'After opening the airline website, fades to the &#34;hover&#45;over&#45;background&#34; state over 125ms'
+            'After opening the airline website, fades to the &#34;hover&#45;over&#45;background&#34; state over 250ms'
         ]
     }
 ];

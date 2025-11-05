@@ -67,6 +67,9 @@ const idSelectorSet = locationStringSet.map((locationString) => `#${locationStri
 
 // Instead of monitoring each thumbnail, monitor the parent element instead 
 
+// Create a modifiable variable for the currently active thumbnail's sequence 
+let currentSequence = 0;
+
 // "event" is a parameter that contains information about the clicking action 
 bbCarousel.addEventListener('click', (event) => {
 
@@ -77,33 +80,52 @@ bbCarousel.addEventListener('click', (event) => {
     // Fetch the clicked item's ID 
     const cTargetID = cTarget.id;
 
-    // Find the sequence of the clicked thumbnail in the arrays 
+    // Find the sequence of the clicked thumbnail in the arrays and the displacement 
     const idSequence = locationStringSet.indexOf(cTargetID);
-
-    // Change the background image to align with the clicked thumbnail 
-    bbBanner.setAttribute('src', imgURLString(locationStringSet[idSequence], 'avif'));
-
-    // Update the location text at the top left corner to align with the clicked thumbnail 
-    bbLocation.innerHTML = locationSet[idSequence];
+    const differenceSequence = idSequence - currentSequence;
+    const xShift = -6 * differenceSequence;
 
     // Move the clicked thumbnail to the center 
-    bbCarousel.style.left = `calc(16.5rem - 6rem * ${idSequence})`;
+    bbCarousel.style.transform = `translateX(${xShift}rem)`;
+
+    // Change the background image and update the location text at the top left corner to align with the clicked thumbnail 
+
+    // Make the elements transparent first 
+    bbBanner.style.opacity = 0;
+    bbLocation.style.opacity = 0;
+
+    // Then update the elements before making them opaque again 
+    setTimeout(() => {
+        bbBanner.setAttribute('src', imgURLString(locationStringSet[idSequence], 'avif'));
+        bbLocation.innerHTML = locationSet[idSequence];
+        bbBanner.style.opacity = 1;
+        bbLocation.style.opacity = 1;
+    }, 250);
+
 });
 
 // Switching between "click-into-collection" (L2) state and normal state 
 
+// Turn into a dedicated function because used repeatedly 
+function rolling(direction) {
+    bbCollection.style.opacity = 0;
+
+    setTimeout(() => {
+        if (direction === "remove") {
+            bbHoverBoard.classList.remove('l2');
+        } else if (direction === "add") {
+            bbHoverBoard.classList.add('l2');
+        } 
+
+        bbCollection.style.opacity = 1;
+    }, 250);
+}
+
 // When clicking the background image, switch to L2 
-bbCollection.addEventListener('click', () => {
-    bbHoverBoard.classList.add('l2');
-});
+bbCollection.addEventListener('click', () => {rolling("add")});
 
 // When no longer hovering above the collection section or after clicking the airline links, switch back to the "hover-over-background" state 
 
-// Turn into a dedicated function because used repeatedly 
-function rollBack () {
-    bbHoverBoard.classList.remove('l2');
-}
-
-bbCollection.addEventListener('mouseleave', rollBack);
-bbAFLink.addEventListener('click', rollBack);
-bbKLMLink.addEventListener('click', rollBack);
+bbCollection.addEventListener('mouseleave', () => {rolling("remove")});
+bbAFLink.addEventListener('click', () => {rolling("remove")});
+bbKLMLink.addEventListener('click', () => {rolling("remove")});
