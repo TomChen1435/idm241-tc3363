@@ -235,6 +235,7 @@ h1#bb-location {
         align-self: center;
         background: none;
         cursor: default;
+        right: 0;
 
         a {
             pointer-events: auto;
@@ -254,6 +255,13 @@ h1#bb-location {
 
     #bb-price {
         background-color: #fc0;
+        left: 0;
+    }
+}
+
+#bb-hover-board.l2:hover {
+    #bb-collection, #bb-price {
+        transform: none;
     }
 }
 
