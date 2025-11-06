@@ -1,3 +1,4 @@
+
 @import url('/css/collection.css');
 
 /* Main grid template */
@@ -45,74 +46,14 @@
 
 }
 
-@media (43rem <= width) {
-    :root {
-        --multiply: 1;
-    }
-}
+/* The modal is not a responsive design. The width is fixed at 40rem. */
 
-@media (38rem <= width < 43rem) {
-    :root {
-        --multiply: 0.87;
-    }
-}
-
-@media (33rem <= width < 38rem) {
-    :root {
-        --multiply: 0.745;
-    }
-}
-
-@media (28rem <= width < 33rem) {
-    :root {
-        --multiply: 0.62;
-    }
-}
-
-@media (23rem <= width < 28rem) {
-    :root {
-        --multiply: 0.495;
-    }
-}
-
-@media (17rem <= width < 23rem) {
-    :root {
-        --multiply: 0.445;
-    }
-}
-
-:root {
-    --gap2: calc(0.125rem * var(--multiply));
-    --gap8: calc(var(--gap2) * 4);
-    --gap12: calc(var(--gap2) * 6);
-    --gap16: calc(var(--gap2) * 8);
-    --gap24: calc(var(--gap2) * 12);
-
-    --container-width: calc(40rem * var(--multiply));
-
-    --bb-collection-width: calc(35.625rem * var(--multiply));
-    --hover-board-height: calc(19.875rem * var(--multiply));
-    
-    --bb-close-btn-height: calc(2.5rem * var(--multiply));
-    --price-width: calc(19.5625rem * var(--multiply));
-   
-    --af-link-img-height: calc(1.25rem * var(--multiply));
-    --klm-link-img-height: calc(2rem * var(--multiply));
-
-    --carousel-img-height: calc(3.125rem * var(--multiply));
-    --carousel-img-width: calc(5rem * var(--multiply));
-
-    --bb-location-font-size: calc(2.25rem * var(--multiply));
-    --collection-paragraph-font-size: calc(1rem * var(--multiply));
-    --price-paragraph-font-size: calc(0.875rem * var(--multiply));
-    --price-h2-font-size: calc(1.75rem * var(--multiply));
-    --bb-prompt-font-size: calc(1.25rem * var(--multiply));
-
-    --carousel-position: calc(var(--container-width) / 2 - var(--carousel-img-width) / 2 - var(--gap16));
+body {
+    min-width: 43rem;
 }
 
 .wrapper.visuals > .container > * {
-    width: var(--container-width);
+    width: 40rem;
 }
 
 /* Build section */
@@ -141,11 +82,11 @@
 #bb-hover-board {
     display: flex;
     flex-flow: column nowrap;
-    height: var(--hover-board-height);
+    height: 19.875rem;
     justify-content: space-between;
     left: 0;
     overflow: hidden;
-    padding-bottom: var(--gap16); 
+    padding-bottom: 1rem; 
     position: absolute;
     top: 0;
     width: 100%;
@@ -158,7 +99,7 @@ h1#bb-location, #bb-price {
     display: flex; 
     flex-flow: row nowrap;
     justify-content: center;
-    padding: var(--gap12) var(--gap16);
+    padding: 0.75rem 1rem;
     width: fit-content;
 }
 
@@ -172,9 +113,9 @@ h1#bb-location, #bb-price {
 
 h1#bb-location {
     background-color: oklab(1 0 0 / 50%);
-    border-radius: 0 0 var(--gap16) 0;
+    border-radius: 0 0 1rem 0;
     color: var(--fb-indigo-text);
-    font-size: var(--bb-location-font-size);
+    font-size: 2.25rem;
     font-weight: 650;
     line-height: 100%;
 }
@@ -183,8 +124,8 @@ h1#bb-location {
 
 #bb-close-btn {
     opacity: 0;
-    margin: var(--gap12) var(--gap16);
-    height: var(--bb-close-btn-height);
+    margin: 0.75rem 1rem;
+    height: 2.5rem;
     pointer-events: non;
 }
 
@@ -194,15 +135,15 @@ h1#bb-location {
     align-items: flex-end;
     align-self: flex-end;
     background-color: oklab(1 0 0 / 85%);
-    border-radius: var(--gap16) 0 0 var(--gap16);
+    border-radius: 1rem 0 0 1rem;
     cursor: pointer;
     display: flex; 
     flex-flow: column nowrap;
-    gap: var(--gap8);
+    gap: 0.5rem;
     justify-content: center;
-    padding: var(--gap16);
+    padding: 1rem;
     position: relative;
-    right: calc(0rem - var(--bb-collection-width));
+    right: -35.625rem;
     width: fit-content;
 
     p.bb-prompt {
@@ -213,11 +154,11 @@ h1#bb-location {
         display: flex; 
         flex-flow: row nowrap;
         justify-content: center;
-        gap: var(--gap12);
+        gap: 0.75rem;
         pointer-events: none;
 
         p {
-            font-size: var(--collection-paragraph-font-size);
+            font-size: 1rem;
             line-height: 75%;
         }
     }
@@ -226,7 +167,7 @@ h1#bb-location {
         align-items: center;
 
         img {
-            height: var(--af-link-img-height);
+            height: 1.25rem;
         }
     }
 
@@ -234,7 +175,7 @@ h1#bb-location {
         align-items: flex-end;
 
         img {
-            height: var(--klm-link-img-height);
+            height: 2rem;
         }
     }
 }
@@ -247,20 +188,20 @@ h1#bb-location {
 
 #bb-price {
     background-color: var(--fb-gray-background);
-    border-radius: 0 var(--gap16) var(--gap16) 0;
-    gap: var(--gap12);
-    left: calc(0rem - var(--price-width));
+    border-radius: 0 1rem 1rem 0;
+    gap: 0.75rem;
+    left: -19.5625rem;
     position: relative;
 
     p {
-        font-size: var(--price-paragraph-font-size);
+        font-size: 0.875rem;
         line-height: 130%;
         text-align: right;
     }
 
     h2 {
         color: var(--fb-indigo-text);
-        font-size: var(--price-h2-font-size);
+        font-size: 1.75rem;
         font-weight: 650;
         line-height: 130%;
     }
@@ -269,15 +210,16 @@ h1#bb-location {
 /* When hover over the background image */
 
 #bb-hover-board:hover #bb-collection {
-    transform: translateX(calc(0rem - var(--bb-collection-width)));
+    transform: translateX(-35.625rem);
 }
 
 #bb-hover-board:hover #bb-price {
-    transform: translateX(var(--price-width));
+    transform: translateX(19.5625rem);
 }
 
 #bb-hover-board.l2 {
     background-color: var(--fb-gray-background);
+
 
     h1#bb-location {
         background: none;
@@ -302,13 +244,13 @@ h1#bb-location {
 
         p.bb-prompt {
             display: block;
-            font-size: var(--bb-prompt-font-size);
+            font-size: 1.25rem;
             line-height: 75%; 
         }
 
         p.bb-prompt.p2 {
             font-weight: 550;
-            padding-bottom: var(--gap16);
+            padding-bottom: 1rem;
         }
     }
 
@@ -330,7 +272,7 @@ h1#bb-location {
     background-color: oklab(1 0 0 / 50%);
     bottom: 0;
     left: 0;
-    padding: var(--gap16);
+    padding: 1rem;
     position: absolute;
 }
 
@@ -338,16 +280,16 @@ h1#bb-location {
     align-items: center;
     display: flex;
     flex-flow: row nowrap;
-    gap: var(--gap16);
+    gap: 1rem;
     justify-content: center;
-    left: var(--carousel-position);
+    left: 16.5rem;
     position: relative;
 
     img {
-        border-radius: var(--gap12);
-        box-shadow: 0 0 var(--gap8) var(--gap2) oklab(0 0 0 / 25%);
+        border-radius: 0.75rem;
+        box-shadow: 0 0 0.5rem 0.125rem oklab(0 0 0 / 25%);
         cursor: pointer;
-        height: var(--carousel-img-height);
-        width: var(--carousel-img-width);
+        height: 3.125rem;
+        width: 5rem;
     }
 }
