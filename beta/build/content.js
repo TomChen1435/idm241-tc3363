@@ -66,10 +66,10 @@ locationSet.forEach((location) => {
 // Compress the snake case location string array into a single string, with the items separated by commas, for later use 
 const idSelectorSet = locationStringSet.map((locationString) => `#${locationString}`).join(', ');
 
-// Instead of monitoring each thumbnail, monitor the parent element instead 
-
 // Create a modifiable variable for the currently active thumbnail's sequence 
 let currentSequence = 0;
+
+// Instead of monitoring each thumbnail, monitor the parent element instead 
 
 // "event" is a parameter that contains information about the clicking action 
 bbCarousel.addEventListener('click', (event) => {
