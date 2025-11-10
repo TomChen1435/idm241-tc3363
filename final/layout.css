@@ -1,0 +1,57 @@
+@import url('/css/collection.css');
+
+/* Main grid template */
+
+@media (width < 46.5rem) {
+
+    main {
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas: 
+        'triggers'
+        'rules'
+        'feedbacks'
+        'loops'
+        'modes'
+        'visuals';
+    }
+
+}
+
+@media (46.5rem <= width) {
+
+    main {
+        grid-template-rows: repeat(6, auto);
+        grid-template-areas: 
+        'triggers rules'
+        'feedbacks rules'
+        'feedbacks loops'
+        'feedbacks modes'
+        'visuals modes';
+    }
+
+}
+
+@media (64rem <= width) {
+
+    main {
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+        'triggers rules feedbacks'
+        'loops rules feedbacks'
+        'modes rules feedbacks'
+        'visuals visuals visuals';
+    }
+
+}
+
+/* Minimal width: 320px */
+
+body {
+    min-width: 20rem;
+}
+
+/* Visuals section - max width */
+
+.wrapper.visuals > .container > * {
+    max-width: 36rem;
+}
