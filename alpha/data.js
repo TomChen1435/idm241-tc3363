@@ -31,7 +31,7 @@ const rfData = [
 
 const lmData = [
     {
-        component: 'Product Card',
+        component: "All Elements",
         trigger: null, 
         content: ['None']
     }
