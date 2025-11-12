@@ -50,9 +50,3 @@
 body {
     min-width: 20rem;
 }
-
-/* Visuals section - max width */
-
-.wrapper.visuals > .container > * {
-    max-width: 36rem;
-}
