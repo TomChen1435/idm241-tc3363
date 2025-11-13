@@ -17,14 +17,13 @@ const locationSet = [
 const locationStringSet = [];
 
 // Elements of the DOM tree 
-const bbCarousel = document.querySelector('#bb-carousel');
-const bbBanner = document.querySelector('#bb-banner');
-const bbHoverBoard = document.querySelector('#bb-hover-board')
-const bbLocation = document.querySelector('#bb-location');
-const closeBtn = document.querySelector('#bb-close-btn');
-const bbCollection = document.querySelector('#bb-collection');
-const bbAFLink = document.querySelector('#bb-af-link');
-const bbKLMLink = document.querySelector('#bb-klm-link');
+const fbBanner = document.querySelector('#fb-banner');
+const fbHoverBoard = document.querySelector('#fb-hover-board')
+const fbLocation = document.querySelector('#fb-location');
+const closeBtn = document.querySelector('#fb-close-btn');
+const fbCollection = document.querySelector('#fb-collection');
+const fbAFLink = document.querySelector('#fb-af-link');
+const fbKLMLink = document.querySelector('#fb-klm-link');
 
 // Turn locations into snake case, matching the id and file name styles 
 function makeString(string) {
@@ -58,7 +57,7 @@ locationSet.forEach((location) => {
     newImage.classList.add('thumbnail');
 
     // Add thumbnails to the carousel section 
-    bbCarousel.appendChild(newImage);
+    fbCarousel.appendChild(newImage);
 });
 
 // Rules for clicking the thumbnails 
@@ -72,7 +71,7 @@ let currentSequence = 0;
 // Instead of monitoring each thumbnail, monitor the parent element instead 
 
 // "event" is a parameter that contains information about the clicking action 
-bbCarousel.addEventListener('click', (event) => {
+fbCarousel.addEventListener('click', (event) => {
 
     // "event.target" is what's actually clicked 
     // ".closest(selector)" walks along the DOM tree's flow and find the closest element that matches the selector, in this case, finding the closest one that's inside the selector set created earlier 
@@ -87,20 +86,20 @@ bbCarousel.addEventListener('click', (event) => {
     const xShift = -6 * differenceSequence;
 
     // Move the clicked thumbnail to the center 
-    bbCarousel.style.transform = `translateX(${xShift}rem)`;
+    fbCarousel.style.transform = `translateX(${xShift}rem)`;
 
     // Change the background image and update the location text at the top left corner to align with the clicked thumbnail 
 
     // Make the elements transparent first 
-    bbBanner.style.opacity = 0;
-    bbLocation.style.opacity = 0;
+    fbBanner.style.opacity = 0;
+    fbLocation.style.opacity = 0;
 
     // Then update the elements before making them opaque again 
     setTimeout(() => {
-        bbBanner.setAttribute('src', imgURLString(locationStringSet[idSequence], 'avif'));
-        bbLocation.innerHTML = locationSet[idSequence];
-        bbBanner.style.opacity = 1;
-        bbLocation.style.opacity = 1;
+        fbBanner.setAttribute('src', imgURLString(locationStringSet[idSequence], 'avif'));
+        fbLocation.innerHTML = locationSet[idSequence];
+        fbBanner.style.opacity = 1;
+        fbLocation.style.opacity = 1;
     }, 250);
 
 });
@@ -109,25 +108,24 @@ bbCarousel.addEventListener('click', (event) => {
 
 // Turn into a dedicated function because used repeatedly 
 function rolling(direction) {
-    bbCollection.style.opacity = 0;
+    fbCollection.style.opacity = 0;
 
     setTimeout(() => {
         if (direction === "remove") {
-            bbHoverBoard.classList.remove('l2');
+            fbHoverBoard.classList.remove('l2');
         } else if (direction === "add") {
-            bbHoverBoard.classList.add('l2');
+            fbHoverBoard.classList.add('l2');
         } 
 
-        bbCollection.style.opacity = 1;
+        fbCollection.style.opacity = 1;
     }, 250);
 }
 
 // When clicking the background image, switch to L2 
-bbCollection.addEventListener('click', () => {rolling("add")});
+fbCollection.addEventListener('click', () => {rolling("add")});
 
 // When no longer hovering above the collection section or after clicking the airline links, switch back to the "hover-over-background" state 
 
-// bbCollection.addEventListener('mouseleave', () => {rolling("remove")});
 closeBtn.addEventListener('click', () => {rolling("remove")});
-bbAFLink.addEventListener('click', () => {rolling("remove")});
-bbKLMLink.addEventListener('click', () => {rolling("remove")});
+fbAFLink.addEventListener('click', () => {rolling("remove")});
+fbKLMLink.addEventListener('click', () => {rolling("remove")});
