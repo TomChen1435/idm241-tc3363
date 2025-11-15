@@ -20,14 +20,13 @@
 @media (46.5rem <= width) {
 
     main {
-        grid-template-rows: repeat(6, auto);
+        grid-template-rows: repeat(5, auto);
         grid-template-areas: 
         'visuals visuals'
         'triggers rules'
         'feedbacks rules'
-        'feedbacks rules'
-        'feedbacks modes'
-        'loops modes';
+        'feedbacks loops'
+        'feedbacks modes';
     }
 
 }
@@ -43,12 +42,6 @@
         'modes rules feedbacks';
     }
 
-}
-
-/* Minimal width: 320px */
-
-body {
-    min-width: 20rem;
 }
 
 /* Build section */

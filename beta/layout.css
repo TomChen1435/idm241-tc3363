@@ -20,13 +20,13 @@
 @media (46.5rem <= width) {
 
     main {
-        grid-template-rows: repeat(6, auto);
+        grid-template-rows: repeat(5, auto);
         grid-template-areas: 
         'triggers rules'
         'feedbacks rules'
         'feedbacks loops'
         'feedbacks modes'
-        'visuals modes';
+        'visuals visuals';
     }
 
 }
@@ -47,5 +47,5 @@
 /* Visuals section - max width */
 
 .wrapper.visuals > .container > * {
-    max-width: 46.5rem;
+    max-width: 40rem;
 }

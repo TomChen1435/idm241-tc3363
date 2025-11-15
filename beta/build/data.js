@@ -127,7 +127,7 @@ const rfData = [
 
 const loopsData = [
     {
-        component: 'Modal',
+        component: 'All Elements',
         trigger: null, 
         content: ['None']
     }

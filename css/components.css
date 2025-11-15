@@ -26,6 +26,8 @@
 
 html, body, header {width: 100%;}
 
+body {min-width: 23rem;}
+
 body, section {
     display: flex;
     flex-flow: column nowrap;
