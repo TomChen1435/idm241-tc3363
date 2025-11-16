@@ -46,22 +46,51 @@
 
 /* Visuals section - max width */
 
+@media (width < 28rem) {
+    .wrapper.visuals > .container {
+        --full: 20;
+    }
+
+    #fb {
+        --fb-gap: 0.5rem;
+    }
+}
+
+@media (28rem <= width < 33rem) {
+    .wrapper.visuals > .container {
+        --full: 25;
+    }
+
+    #fb {
+        --fb-gap: 0.5rem;
+    }
+}
+
+@media (33rem <= width) {
+    .wrapper.visuals > .container {
+        --full: 30;
+    }
+
+    #fb {
+        --fb-gap: 0.75rem;
+    }
+}
+
 .wrapper.visuals > .container > * {
-    --full-width: 20rem;
+    --full-width: calc(var(--full) * 1rem);
     width: var(--full-width);
 }
 
 /* Build section */
 
 #fb {
-    --fb-gap: 0.5rem;
     --banner-width: calc(var(--full-width) - 2 * var(--fb-gap));
     --banner-height: calc(var(--banner-width) * 10 / 16);
     --thumbnail-width: calc((var(--banner-width) - 3 * var(--fb-gap)) / 4);
     --thumbnail-height: calc(var(--thumbnail-width) * 10 / 16);
 
     background-color: var(--fb-gray-background);
-    border-radius: 1rem;
+    border-radius: calc(2 * var(--fb-gap));
     display: grid;
     gap: var(--fb-gap);
     grid-template: var(--banner-height) repeat(3, --thumbnail-height) / repeat(4, var(--thumbnail-width));
@@ -105,18 +134,18 @@
 
 #fb-banner p {
     color: var(--fb-black-text);
-    font-size: 0.75rem;
+    font-size: calc(0.75 / 20 * var(--full-width));
     font-weight: 400;
     line-height: 120%;
     text-align: right;
 }
 
 #fb-hover-board img.af {
-    height: 0.75rem;
+    height: calc(0.75 / 20 * var(--full-width));
 }
 
 #fb-hover-board img.kl {
-    height: 1.5rem;
+    height: calc(1.5 / 20 * var(--full-width));
 }
 
 #fb-banner > img, #fb-hover-board {
@@ -148,7 +177,7 @@
     background-color: oklab(1 0 0 / 0.5);
     border-radius: 0 0 var(--fb-gap) 0;
     color: var(--fb-indigo-text);
-    font-size: 1.5rem;
+    font-size: calc(1.5 / 20 * var(--full-width));
     font-weight: 650;
     line-height: 100%;
     padding: var(--fb-gap);
@@ -156,7 +185,7 @@
 
 #fb-close-btn {
     cursor: pointer;
-    height: 1.5rem;
+    height: calc(1.5 / 20 * var(--full-width));
     margin-right: var(--fb-gap);
     opacity: 0;
 }
@@ -212,7 +241,7 @@
 
 #fb-price > h1 {
     color: var(--fb-indigo-text);
-    font-size: 1.5rem;
+    font-size: calc(1.5 / 20 * var(--full-width));
     font-weight: 650;
     line-height: 100%;
 }
@@ -237,13 +266,13 @@
         align-self: center;
         display: flex;
         flex-flow: column nowrap;
-        gap: 0.25rem;
+        gap: calc(0.25 / 20 * var(--full-width));
     }
 
     #fb-collection-center > a {
         display: flex;
         flex-flow: row nowrap;
-        gap: 0.25rem;
+        gap: calc(0.25 / 20 * var(--full-width));
     }
 
     #fb-price {
