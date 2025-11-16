@@ -44,11 +44,62 @@
 
 }
 
+/* Visuals section - max width */
+
+.wrapper.visuals > .container > * {
+    --full-width: 20rem;
+    width: var(--full-width);
+}
+
 /* Build section */
 
-#fb-banner {
-    --banner-width: 19rem;
+#fb {
+    --fb-gap: 0.5rem;
+    --banner-width: calc(var(--full-width) - 2 * var(--fb-gap));
     --banner-height: calc(var(--banner-width) * 10 / 16);
+    --thumbnail-width: calc((var(--banner-width) - 3 * var(--fb-gap)) / 4);
+    --thumbnail-height: calc(var(--thumbnail-width) * 10 / 16);
+
+    background-color: var(--fb-gray-background);
+    border-radius: 1rem;
+    display: grid;
+    gap: var(--fb-gap);
+    grid-template: var(--banner-height) repeat(3, --thumbnail-height) / repeat(4, var(--thumbnail-width));
+    grid-template-areas:
+    'banner banner banner banner'
+    'atlanta boston los_angeles miami'
+    'new_york phoenix portland raleigh-durham'
+    'san_diego san_francisco seattle washington_dc';
+    padding: var(--fb-gap);
+}
+
+#fb * {
+    transition: all 250ms ease-in-out;
+}
+
+.thumbnail {
+    border-radius: var(--fb-gap);
+    cursor: pointer;
+    height: var(--thumbnail-height);
+    width: var(--thumbnail-width);
+}
+
+.thumbnail.selected {
+    border: calc(var(--fb-gap) / 2) solid #fc0;
+    cursor: default;
+    filter: brightness(0.5);
+}
+
+#fb-banner {
+    border-radius: var(--fb-gap);
+    display: inline-block;
+    grid-area: banner;
+    overflow: hidden;
+    position: relative;
+    width: var(--banner-width);
+}
+
+#fb-banner > * {
     width: var(--banner-width);
 }
 
@@ -69,9 +120,7 @@
 }
 
 #fb-banner > img, #fb-hover-board {
-    background-color: rgba(0,255,0,0.5);
     height: var(--banner-height);
-    width: var(--banner-width);
 }
 
 #fb-hover-board {
@@ -79,6 +128,8 @@
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    position: absolute;
+    top: 0;
 }
 
 #fb-hover-board * {
@@ -95,49 +146,43 @@
 
 #fb-location {
     background-color: oklab(1 0 0 / 0.5);
-    border-radius: 0 0 0.5rem 0;
+    border-radius: 0 0 var(--fb-gap) 0;
     color: var(--fb-indigo-text);
     font-size: 1.5rem;
     font-weight: 650;
     line-height: 100%;
-    padding: 0.5rem;
+    padding: var(--fb-gap);
 }
 
 #fb-close-btn {
+    cursor: pointer;
     height: 1.5rem;
-    margin-right: 0.5rem;
+    margin-right: var(--fb-gap);
+    opacity: 0;
 }
 
 #fb-collection-right {
     align-items: flex-end;
     align-self: flex-end;
     background-color: oklab(1 0 0 / 0.8);
-    border-radius: 0.5rem 0 0 0.5rem;
+    border-radius: var(--fb-gap) 0 0 var(--fb-gap);
+    cursor: pointer;
     display: flex;
     flex-flow: column nowrap;
     gap: 0.25rem;
-    padding: 0.5rem;
+    padding: var(--fb-gap);
+    position: relative;
 }
 
 #fb-airline-logos {
     align-items: flex-end;
     display: flex;
     flex-flow: row nowrap;
-    gap: 0.5rem;
+    gap: var(--fb-gap);
 }
 
 #fb-collection-center {
-    align-items: center;
-    align-self: center;
-    display: flex;
-    flex-flow: column nowrap;
-    gap: 0.25rem;
-}
-
-#fb-collection-center > a {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 0.25rem;
+    display: none;
 }
 
 #fb-af-link {
@@ -146,7 +191,7 @@
 
 #fb-kl-link {
     align-items: flex-end;
-    gap: 0.5rem !important;
+    gap: var(--fb-gap) !important;
 }
 
 #fb-collection-center > a > p {
@@ -157,11 +202,12 @@
 #fb-price {
     align-items: center;
     background-color: oklab(1 0 0 / 0.8);
-    border-radius: 0 0.5rem 0 0;
+    border-radius: 0 var(--fb-gap) 0 0;
     display: flex;
     flex-flow: row nowrap;
-    gap: 0.5rem;
-    padding: 0.5rem;
+    gap: var(--fb-gap);
+    padding: var(--fb-gap);
+    position: relative;
 }
 
 #fb-price > h1 {
@@ -169,4 +215,40 @@
     font-size: 1.5rem;
     font-weight: 650;
     line-height: 100%;
+}
+
+#fb-hover-board.l2 {
+    background-color: var(--fb-gray-background);
+
+    #fb-location {
+        background: none;
+    }
+
+    #fb-close-btn {
+        opacity: 1;
+    }
+
+    #fb-collection-right {
+        display: none;
+    }
+
+    #fb-collection-center {
+        align-items: center;
+        align-self: center;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0.25rem;
+    }
+
+    #fb-collection-center > a {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 0.25rem;
+    }
+
+    #fb-price {
+        background-color: #fc0;
+        left: 0 !important;
+        transform: none !important;
+    }
 }
