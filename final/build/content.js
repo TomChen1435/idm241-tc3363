@@ -115,37 +115,35 @@ fbDiv.addEventListener('click', (event) => {
     // "event.target" is what's actually clicked 
     // ".closest(selector)" walks along the DOM tree's flow and find the closest element that matches the selector, in this case, finding the closest one that's inside the selector set created earlier 
 
-    try {
-        const cTarget = event.target.closest(idSelectorSet);
+    const cTarget = event.target.closest(idSelectorSet);
 
-        if (cTarget.classList.contains('thumbnail')) {
-            // Fetch the clicked item's ID 
-            const cTargetID = cTarget.id;
+    if (cTarget.classList.contains('thumbnail')) {
+        // Fetch the clicked item's ID 
+        const cTargetID = cTarget.id;
 
-            // Find the sequence of the clicked thumbnail in the arrays 
-            const idSequence = locationStringSet.indexOf(cTargetID);
+        // Find the sequence of the clicked thumbnail in the arrays 
+        const idSequence = locationStringSet.indexOf(cTargetID);
 
-            // Remove style from the current one
-            document.querySelectorAll('.selected').forEach(element => {element.classList.remove('selected')});
+        // Remove style from the current one
+        document.querySelectorAll('.selected').forEach(element => {element.classList.remove('selected')});
 
-            // Apply designs to the clicked thumbnail
-            cTarget.classList.add('selected');
+        // Apply designs to the clicked thumbnail
+        cTarget.classList.add('selected');
 
-            // Change the background image and update the location text at the top left corner to align with the clicked thumbnail 
+        // Change the background image and update the location text at the top left corner to align with the clicked thumbnail 
 
-            // Make the elements transparent first 
-            fbBanner.style.opacity = 0;
-            fbLocation.style.opacity = 0;
+        // Make the elements transparent first 
+        fbBanner.style.opacity = 0;
+        fbLocation.style.opacity = 0;
 
-            // Then update the elements before making them opaque again 
-            setTimeout(() => {
-                fbBanner.setAttribute('src', imgURLString(locationStringSet[idSequence], 'avif'));
-                fbLocation.innerHTML = locationSet[idSequence];
-                fbBanner.style.opacity = 1;
-                fbLocation.style.opacity = 1;
-            }, 250);
-        }
-    } catch {}
+        // Then update the elements before making them opaque again 
+        fbLocation.addEventListener('transitionend', () => {
+            fbBanner.setAttribute('src', imgURLString(locationStringSet[idSequence], 'avif'));
+            fbLocation.innerHTML = locationSet[idSequence];
+            fbBanner.style.opacity = 1;
+            fbLocation.style.opacity = 1;
+        });
+    }
 
 });
 
@@ -155,16 +153,16 @@ fbDiv.addEventListener('click', (event) => {
 function rolling(direction) {
     if (direction === "remove") {
         fbCollectionCtr.style.opacity = 0;
-        setTimeout(() => {
+        fbCollectionCtr.addEventListener('transitionend', () => {
             fbHoverBoard.classList.remove('l2');
             fbCollectionRt.style.opacity = 1;
-        }, 250);
+        });
     } else if (direction === "add") {
         fbCollectionRt.style.opacity = 0;
-        setTimeout(() => {
+        fbCollectionRt.addEventListener('transitionend', () => {
             fbHoverBoard.classList.add('l2');
             fbCollectionCtr.style.opacity = 1;
-        }, 250);
+        });
     }     
 }
 
