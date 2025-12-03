@@ -32,8 +32,8 @@
     - Click
         - The banner image fades to solid bright gray color over 250ms&#44; and then fades to the image in the clicked thumbnail over 250ms
         - The location at the top left corner of the banner also changes over 500ms to align with the clicked thumbnail&#39;s content
-        - The original thumbnail becomes 50&#37; brighter&#44; and the yellow outline fades out over 250ms
-        - The clicked thumbnail becomes 50&#37; darker and gets a yellow outline over 250ms
+        - The original thumbnail becomes 50&#37; brighter&#44; and the yellow outline fades out over 250ms as the image enlarges to take all available space of the grid cell
+        - The clicked thumbnail becomes 50&#37; darker&#44; gets a yellow outline&#44; and shrinks a little to accomodate the added outline over 250ms
 - Banner
     - Hover On
         - Airline info collection section slides in from the right over 250ms
