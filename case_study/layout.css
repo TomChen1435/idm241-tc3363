@@ -1,1 +1,29 @@
 @import url('../css/collection.css');
+
+img.cs-banner {
+    align-self: center;
+    margin-top: var(--gap-side);
+    max-height: 45vh;
+    max-width: 100%
+}
+
+article {
+    align-self: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--gap);
+    max-width: 60rem;
+    padding: var(--gap-side);
+}
+
+article > * {
+    color: var(--txt-black);
+}
+
+article h2 {
+    line-height: 120%;
+}
+
+article p {
+    line-height: 145%;
+}
